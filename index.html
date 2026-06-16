@@ -137,10 +137,31 @@
 
     .lang-toggle:hover { border-color: var(--accent); }
 
+    .lang-toggle.spin svg, .lang-toggle.spin { animation: langPulse 0.4s ease; }
+
+    @keyframes langPulse {
+      0% { transform: scale(1); }
+      40% { transform: scale(0.88) rotate(-6deg); }
+      100% { transform: scale(1) rotate(0); }
+    }
+
     .lang-sep { color: var(--muted); }
 
     .lang-opt { color: var(--muted); transition: color 0.2s; }
-    .lang-opt.active { color: var(--accent); }
+    .lang-opt.active { color: var(--accent); font-weight: 800; }
+
+    /* ── LANGUAGE SWITCH "DRAGON SCALE" RIPPLE ── */
+    [data-i18n] {
+      transform-origin: center bottom;
+      transition: opacity 0.32s cubic-bezier(.34,1.56,.64,1), transform 0.32s cubic-bezier(.34,1.56,.64,1), filter 0.32s ease;
+      will-change: transform, opacity;
+    }
+
+    .i18n-fade {
+      opacity: 0 !important;
+      transform: scale(0.6) translateY(6px) !important;
+      filter: blur(2px);
+    }
 
     .nav-links a {
       color: var(--muted);
@@ -2376,27 +2397,54 @@
 
   let currentLang = localStorage.getItem('lang') || 'en';
 
-  function applyLanguage(lang) {
-    currentLang = lang;
-    document.documentElement.lang = lang === 'ms' ? 'ms' : 'en';
+  function applyLanguage(lang, animate) {
     const dict = I18N[lang] || I18N.en;
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    const textEls = document.querySelectorAll('[data-i18n]');
+    const placeholderEls = document.querySelectorAll('[data-i18n-placeholder]');
+
+    const updateContent = () => {
+      currentLang = lang;
+      document.documentElement.lang = lang === 'ms' ? 'ms' : 'en';
+      textEls.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key] !== undefined) el.innerHTML = dict[key];
+      });
+      placeholderEls.forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (dict[key] !== undefined) el.placeholder = dict[key];
+      });
+      document.querySelectorAll('.lang-opt').forEach(opt => {
+        opt.classList.toggle('active', opt.dataset.lang === lang);
+      });
+      localStorage.setItem('lang', lang);
+      if (typeof renderChatWelcome === 'function') renderChatWelcome();
+    };
+
+    if (!animate) { updateContent(); return; }
+
+    // "Dragon scale" ripple: elements fold away in sequence, then reveal in sequence — like overlapping scales.
+    textEls.forEach((el, i) => {
+      el.style.transitionDelay = Math.min(i * 7, 260) + 'ms';
+      el.classList.add('i18n-fade');
     });
-    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
-      const key = el.getAttribute('data-i18n-placeholder');
-      if (dict[key] !== undefined) el.placeholder = dict[key];
-    });
-    document.querySelectorAll('.lang-opt').forEach(opt => {
-      opt.classList.toggle('active', opt.dataset.lang === lang);
-    });
-    localStorage.setItem('lang', lang);
-    if (typeof renderChatWelcome === 'function') renderChatWelcome();
+
+    setTimeout(() => {
+      updateContent();
+      textEls.forEach((el, i) => {
+        el.style.transitionDelay = Math.min(i * 9, 320) + 'ms';
+        el.classList.remove('i18n-fade');
+      });
+      setTimeout(() => {
+        textEls.forEach(el => { el.style.transitionDelay = ''; });
+      }, 700);
+    }, 260);
   }
 
   document.getElementById('langToggle').addEventListener('click', () => {
-    applyLanguage(currentLang === 'en' ? 'ms' : 'en');
+    const langToggle = document.getElementById('langToggle');
+    langToggle.classList.add('spin');
+    setTimeout(() => langToggle.classList.remove('spin'), 400);
+    applyLanguage(currentLang === 'en' ? 'ms' : 'en', true);
   });
 
   const hamburger = document.getElementById('hamburger');
@@ -2607,7 +2655,7 @@
   chatSend.addEventListener('click', sendChat);
   chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendChat(); });
 
-  applyLanguage(currentLang);
+  applyLanguage(currentLang, false);
 </script>
 
 </body>
