@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Muhammad Shafiq Danial | Full Stack Developer</title>
-  <script src="https://js.puter.com/v2/"></script>
   <style>
     :root {
       --primary: #0f172a;
@@ -1420,6 +1419,52 @@
     .chat-msg a { color: #c7d2fe; text-decoration: underline; }
     .chat-msg.user a { color: #fff; }
 
+    .chat-quick-replies {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      padding: 0 1rem 0.9rem;
+    }
+
+    .chat-chip {
+      background: rgba(99,102,241,0.1);
+      border: 1px solid rgba(99,102,241,0.3);
+      color: #c7d2fe;
+      font-size: 0.76rem;
+      padding: 0.4rem 0.75rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .chat-chip:hover {
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .chat-contact-btns {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .chat-contact-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 0.4rem 0.7rem;
+      border-radius: 999px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .chat-contact-btn.wa { background: linear-gradient(135deg, #16a34a, #22c55e); }
+    .chat-contact-btn.mail { background: linear-gradient(135deg, var(--accent), var(--accent2)); }
+
     .chat-input-row {
       display: flex;
       gap: 0.5rem;
@@ -2077,7 +2122,7 @@
           </div>
           <svg class="contact-item-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
-        <a href="https://wa.me/601139641194" class="contact-item wa" target="_blank" rel="noopener">
+        <a href="https://wa.me/601139641194?text=Saya%20berminat%20dengan%20servis%20ini" class="contact-item wa" target="_blank" rel="noopener">
           <div class="contact-item-icon">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 3.5a8.83 8.83 0 0 0-7.65 13.27L3 21l4.4-1.34a8.85 8.85 0 0 0 4.65 1.3h.01a8.86 8.86 0 0 0 8.83-8.78 8.78 8.78 0 0 0-2.69-6.4Zm-5.55 13.4h-.01a7.36 7.36 0 0 1-3.75-1.03l-.27-.16-2.78.85.84-2.7-.18-.28a7.34 7.34 0 0 1 11.34-9.19 7.32 7.32 0 0 1 2.22 5.27 7.35 7.35 0 0 1-7.41 7.24Zm4.04-5.5c-.22-.11-1.3-.64-1.5-.72-.2-.07-.35-.11-.5.11-.15.22-.57.72-.7.86-.13.15-.26.16-.48.05-.22-.1-.93-.34-1.78-1.1a6.68 6.68 0 0 1-1.23-1.53c-.13-.22-.01-.34.11-.46.11-.11.24-.27.36-.41.12-.13.16-.23.24-.38.08-.15.04-.27-.02-.38-.06-.11-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.41-.14 0-.31-.01-.47-.01-.16 0-.42.06-.64.3-.22.24-.84.82-.84 1.99 0 1.17.86 2.31.98 2.47.12.16 1.6 2.46 3.9 3.35 2.3.9 2.3.6 2.71.56.41-.03 1.3-.53 1.49-1.04.18-.51.18-.94.13-1.04-.05-.1-.2-.16-.42-.27Z"/></svg>
           </div>
@@ -2095,7 +2140,7 @@
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             Hantar Emel
           </a>
-          <a href="https://wa.me/601139641194" class="btn btn-whatsapp" target="_blank" rel="noopener">
+          <a href="https://wa.me/601139641194?text=Saya%20berminat%20dengan%20servis%20ini" class="btn btn-whatsapp" target="_blank" rel="noopener">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 3.5a8.83 8.83 0 0 0-7.65 13.27L3 21l4.4-1.34a8.85 8.85 0 0 0 4.65 1.3h.01a8.86 8.86 0 0 0 8.83-8.78 8.78 8.78 0 0 0-2.69-6.4Zm-5.55 13.4h-.01a7.36 7.36 0 0 1-3.75-1.03l-.27-.16-2.78.85.84-2.7-.18-.28a7.34 7.34 0 0 1 11.34-9.19 7.32 7.32 0 0 1 2.22 5.27 7.35 7.35 0 0 1-7.41 7.24Zm4.04-5.5c-.22-.11-1.3-.64-1.5-.72-.2-.07-.35-.11-.5.11-.15.22-.57.72-.7.86-.13.15-.26.16-.48.05-.22-.1-.93-.34-1.78-1.1a6.68 6.68 0 0 1-1.23-1.53c-.13-.22-.01-.34.11-.46.11-.11.24-.27.36-.41.12-.13.16-.23.24-.38.08-.15.04-.27-.02-.38-.06-.11-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.41-.14 0-.31-.01-.47-.01-.16 0-.42.06-.64.3-.22.24-.84.82-.84 1.99 0 1.17.86 2.31.98 2.47.12.16 1.6 2.46 3.9 3.35 2.3.9 2.3.6 2.71.56.41-.03 1.3-.53 1.49-1.04.18-.51.18-.94.13-1.04-.05-.1-.2-.16-.42-.27Z"/></svg>
             Hantar WhatsApp
           </a>
@@ -2131,14 +2176,21 @@
 <div class="chat-window" id="chatWindow">
   <div class="chat-header">
     <span class="chat-header-dot"></span>
-    Tanya AI Assistant
+    Tanya Assistant
     <button class="chat-close" id="chatClose" aria-label="Tutup">&times;</button>
   </div>
   <div class="chat-messages" id="chatMessages">
-    <div class="chat-msg bot">Hai! 👋 Saya AI assistant Shafiq. Tanya apa-apa pasal servis, pakej, atau projek beliau.</div>
+    <div class="chat-msg bot">Hai! 👋 Pilih soalan di bawah untuk jawapan pantas, atau taip soalan anda sendiri.</div>
+  </div>
+  <div class="chat-quick-replies" id="chatQuickReplies">
+    <button class="chat-chip" data-faq="harga">💰 Harga &amp; Pakej</button>
+    <button class="chat-chip" data-faq="servis">🛠️ Servis Ditawarkan</button>
+    <button class="chat-chip" data-faq="tempoh">⏱️ Tempoh Siap Projek</button>
+    <button class="chat-chip" data-faq="renewal">🔄 Caj Renewal</button>
+    <button class="chat-chip" data-faq="mula">🚀 Macam Mana Nak Mula</button>
   </div>
   <div class="chat-input-row">
-    <input type="text" id="chatInput" placeholder="Tulis soalan anda..." />
+    <input type="text" id="chatInput" placeholder="Atau taip soalan anda..." />
     <button class="chat-send" id="chatSend" aria-label="Hantar">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
     </button>
@@ -2223,25 +2275,60 @@
     card.addEventListener('mouseleave', () => { card.style.transform = ''; });
   });
 
-  // AI Chat Assistant (powered by Puter.js — free, no API key needed)
+  // Chat Assistant — FAQ quick-replies auto-answer; free-text questions go direct to WhatsApp/Email
   const chatToggle = document.getElementById('chatToggle');
   const chatWindow = document.getElementById('chatWindow');
   const chatClose = document.getElementById('chatClose');
   const chatMessages = document.getElementById('chatMessages');
+  const chatQuickReplies = document.getElementById('chatQuickReplies');
   const chatInput = document.getElementById('chatInput');
   const chatSend = document.getElementById('chatSend');
 
-  const CONTACT_NOTE = 'Jika soalan ini di luar pengetahuan saya, sila hubungi Shafiq terus melalui <a href="https://wa.me/601139641194" target="_blank" rel="noopener">WhatsApp</a> atau <a href="mailto:shafiqopz9@gmail.com">Emel</a>.';
+  const WA_NUMBER = '601139641194';
+  const WA_TEXT = encodeURIComponent('Saya berminat dengan servis ini');
+  const WA_LINK = `https://wa.me/${WA_NUMBER}?text=${WA_TEXT}`;
+  const MAIL_LINK = 'mailto:shafiqopz9@gmail.com?subject=Berminat%20dengan%20servis%20anda';
 
-  const SYSTEM_PROMPT = `Anda adalah AI assistant rasmi untuk laman web portfolio Muhammad Shafiq Danial Bin Sharudin, seorang Full Stack Developer.
-Maklumat tentang beliau:
-- Pakar dalam PHP, MySQL, HTML, CSS, JavaScript, hosting & deployment, integrasi AI.
-- Pakej harga: Starter RM1,000 (asal RM1,500), Business RM3,000 (asal RM3,500, paling popular), E-Commerce RM6,000 (asal RM7,000). Semua pakej termasuk free domain 1 tahun. Hosting renewal ~RM30-50/bulan (Starter & Business) atau RM50-100/bulan (E-Commerce) bermula bulan ke-2. Domain renewal ~RM20-100/tahun bermula tahun ke-2.
-- Servis: custom website, corporate website, e-commerce, dashboard/admin panel, hosting & domain setup, payment gateway integration, maintenance & support, optimization, database design.
-- Hubungi: WhatsApp +60 11-3964 1194, Emel shafiqopz9@gmail.com.
-Jawab soalan pelawat dengan ringkas, mesra, dan dalam Bahasa Malaysia (kecuali ditanya dalam Bahasa Inggeris). Jika anda tidak pasti atau soalan di luar skop maklumat di atas (contohnya soalan peribadi yang sangat spesifik, kuotasi tepat, atau perbincangan terperinci projek), arahkan pelawat untuk menghubungi Shafiq terus melalui WhatsApp (+60 11-3964 1194) atau emel (shafiqopz9@gmail.com).`;
+  const CONTACT_BTNS = `
+    <div class="chat-contact-btns">
+      <a class="chat-contact-btn wa" href="${WA_LINK}" target="_blank" rel="noopener">💬 WhatsApp</a>
+      <a class="chat-contact-btn mail" href="${MAIL_LINK}">✉️ Emel</a>
+    </div>`;
 
-  let chatHistory = [];
+  const FAQ = {
+    harga: {
+      label: '💰 Harga & Pakej',
+      answer: `Ada 3 pakej:<br>
+        • <b>Starter</b> — RM1,000 (asal RM1,500)<br>
+        • <b>Business</b> — RM3,000 (asal RM3,500) ⭐ Paling popular<br>
+        • <b>E-Commerce</b> — RM6,000 (asal RM7,000)<br><br>
+        Semua pakej termasuk <b>free domain 1 tahun</b>. Nak tahu lebih detail pakej mana yang sesuai?`
+    },
+    servis: {
+      label: '🛠️ Servis Ditawarkan',
+      answer: `Servis yang ditawarkan termasuk:<br>
+        Custom website, corporate website, e-commerce, dashboard/admin panel, hosting &amp; domain setup, payment gateway integration, maintenance &amp; support, optimization, dan database design.`
+    },
+    tempoh: {
+      label: '⏱️ Tempoh Siap Projek',
+      answer: `Anggaran tempoh siap:<br>
+        • Starter: ~1-3 minggu<br>
+        • Business: ~4-6 minggu<br>
+        • E-Commerce: ~4-8 minggu<br><br>
+        Tempoh sebenar bergantung pada skop &amp; kerumitan projek.`
+    },
+    renewal: {
+      label: '🔄 Caj Renewal',
+      answer: `Lepas siap projek:<br>
+        • Hosting ~RM30-50/bulan (Starter &amp; Business) atau ~RM50-100/bulan (E-Commerce), bermula bulan ke-2<br>
+        • Domain ~RM20-100/tahun, bermula tahun ke-2 (tahun pertama free)`
+    },
+    mula: {
+      label: '🚀 Macam Mana Nak Mula',
+      answer: `Mudah je! Hubungi Shafiq terus melalui WhatsApp atau Emel untuk bincang keperluan projek anda, pilih pakej yang sesuai, dan projek boleh mula sebaik sahaja deposit diterima.`
+    }
+  };
+
   let chatOpen = false;
 
   function openChat() {
@@ -2258,43 +2345,33 @@ Jawab soalan pelawat dengan ringkas, mesra, dan dalam Bahasa Malaysia (kecuali d
   chatToggle.addEventListener('click', () => { chatOpen ? closeChat() : openChat(); });
   chatClose.addEventListener('click', closeChat);
 
-  function addMessage(text, who) {
+  function addMessage(html, who) {
     const div = document.createElement('div');
     div.className = `chat-msg ${who}`;
-    div.innerHTML = text;
+    div.innerHTML = html;
     chatMessages.appendChild(div);
     chatMessages.scrollTop = chatMessages.scrollHeight;
     return div;
   }
 
-  async function sendChat() {
+  chatQuickReplies.querySelectorAll('.chat-chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const item = FAQ[chip.dataset.faq];
+      if (!item) return;
+      addMessage(item.label, 'user');
+      addMessage(item.answer + CONTACT_BTNS, 'bot');
+    });
+  });
+
+  function sendChat() {
     const question = chatInput.value.trim();
     if (!question) return;
     addMessage(question, 'user');
     chatInput.value = '';
-    chatSend.disabled = true;
-
-    const typingEl = addMessage('Menaip...', 'bot typing');
-
-    try {
-      if (!window.puter || !window.puter.ai) throw new Error('AI unavailable');
-
-      chatHistory.push({ role: 'user', content: question });
-      const response = await puter.ai.chat(
-        [{ role: 'system', content: SYSTEM_PROMPT }, ...chatHistory],
-        { model: 'gpt-4o-mini' }
-      );
-      const answer = (response && (response.message?.content || response.toString())) || '';
-      chatHistory.push({ role: 'assistant', content: answer });
-
-      typingEl.classList.remove('typing');
-      typingEl.innerHTML = answer.replace(/\n/g, '<br>');
-    } catch (err) {
-      typingEl.classList.remove('typing');
-      typingEl.innerHTML = `Maaf, saya tidak dapat menyambung sekarang. ${CONTACT_NOTE}`;
-    } finally {
-      chatSend.disabled = false;
-    }
+    addMessage(
+      `Untuk soalan khusus seperti ini, lebih pantas jika anda hubungi Shafiq terus:${CONTACT_BTNS}`,
+      'bot'
+    );
   }
 
   chatSend.addEventListener('click', sendChat);
