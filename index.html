@@ -576,7 +576,7 @@
 
     .skills-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
       gap: 1.25rem;
     }
 
@@ -851,7 +851,7 @@
 
     .packages-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
       gap: 1.75rem;
       align-items: start;
     }
@@ -1276,17 +1276,30 @@
     }
 
     /* ── MOBILE FRIENDLY TWEAKS ── */
+    @media (max-width: 768px) {
+      /* mobile Safari renders fixed background + heavy blur poorly — lighten it */
+      body::before { background-attachment: scroll; }
+      #skills, #demo, #positions, .stats-bar { backdrop-filter: none; background: rgba(11,17,32,0.92); }
+      #services, #packages, #contact { backdrop-filter: none; background: rgba(15,23,42,0.88); }
+      footer { backdrop-filter: none; background: rgba(11,17,32,0.94); }
+    }
+
     @media (max-width: 600px) {
       section { padding: 4rem 1.25rem; }
       .hero { padding: 6.5rem 1.25rem 3.5rem; }
 
       .section-header { margin-bottom: 2.25rem; }
 
-      .stat { padding: 1.5rem 1rem; min-width: 130px; }
-      .stat-number { font-size: 1.8rem; }
-      .stat-label { font-size: 0.68rem; }
+      .stats-bar { display: grid; grid-template-columns: 1fr 1fr; }
+      .stat { padding: 1.25rem 0.5rem; min-width: 0; }
+      .stat::before { display: none; }
+      .stat:nth-child(odd) { border-right: 1px solid var(--border); }
+      .stat:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
+      .stat-number { font-size: 1.7rem; }
+      .stat-label { font-size: 0.66rem; }
 
-      .hero-photo-wrap { width: 240px; height: 290px; }
+      .hero-photo-wrap { width: 230px; height: 270px; }
+      .hero-photo { mask-image: radial-gradient(ellipse 78% 88% at 50% 38%, black 60%, transparent 100%); -webkit-mask-image: radial-gradient(ellipse 78% 88% at 50% 38%, black 60%, transparent 100%); }
 
       .hero-btns { width: 100%; }
       .hero-btns .btn { flex: 1; justify-content: center; }
@@ -1305,9 +1318,7 @@
     }
 
     @media (max-width: 400px) {
-      .hero-photo-wrap { width: 200px; height: 240px; }
-      .stat { min-width: 100%; }
-      .stat + .stat::before { display: none; }
+      .hero-photo-wrap { width: 190px; height: 225px; }
     }
   </style>
 </head>
