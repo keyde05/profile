@@ -1110,6 +1110,17 @@
       transform: translateY(0);
     }
 
+    .reveal-item {
+      opacity: 0;
+      transform: translateY(32px) scale(0.97);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+
+    .reveal-item.visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
     /* ── CHAT ASSISTANT ── */
     .chat-toggle {
       position: fixed;
@@ -1441,44 +1452,44 @@
       <p class="section-desc" data-i18n="services.desc">Complete web solutions for individuals, SMEs, and corporate companies.</p>
     </div>
 
-    <div class="services-grid reveal">
-      <div class="service-card span-2 tint-indigo">
+    <div class="services-grid">
+      <div class="service-card reveal-item span-2 tint-indigo">
         <h3 data-i18n="services.custom">Custom Website Development</h3>
         <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
-      <div class="service-card tint-violet">
+      <div class="service-card reveal-item tint-violet">
         <h3 data-i18n="services.corporate">Corporate Website Development</h3>
         <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
-      <div class="service-card tint-blue">
+      <div class="service-card reveal-item tint-blue">
         <h3 data-i18n="services.ecommerce">E-Commerce Website Development</h3>
         <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
-      <div class="service-card tint-cyan">
+      <div class="service-card reveal-item tint-cyan">
         <h3 data-i18n="services.dashboard">Dashboard &amp; Admin Panel Development</h3>
         <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
-      <div class="service-card tint-blue">
+      <div class="service-card reveal-item tint-blue">
         <h3 data-i18n="services.hosting">Hosting &amp; Domain Setup</h3>
         <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
-      <div class="service-card span-2 tint-violet">
+      <div class="service-card reveal-item span-2 tint-violet">
         <h3 data-i18n="services.payment">Payment Gateway Integration</h3>
         <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
-      <div class="service-card tint-indigo">
+      <div class="service-card reveal-item tint-indigo">
         <h3 data-i18n="services.maintenance">Website Maintenance &amp; Support</h3>
         <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
-      <div class="service-card tint-cyan">
+      <div class="service-card reveal-item tint-cyan">
         <h3 data-i18n="services.optimization">Website Optimization</h3>
         <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
-      <div class="service-card tint-violet">
+      <div class="service-card reveal-item tint-violet">
         <h3 data-i18n="services.database">Database Design &amp; Management</h3>
         <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
-      <div class="service-card tint-indigo">
+      <div class="service-card reveal-item tint-indigo">
         <h3 data-i18n="services.bugfix">Bug Fixing &amp; Troubleshooting</h3>
         <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
@@ -1495,10 +1506,10 @@
       <p class="section-desc" data-i18n="skills.desc">Full-stack skills — from UI design to server and database management.</p>
     </div>
 
-    <div class="skills-grid reveal">
+    <div class="skills-grid">
 
       <!-- Frontend -->
-      <div class="skill-card sk-blue">
+      <div class="skill-card reveal-item sk-blue">
         <div class="skill-card-banner">
           <img src="frontend.png" alt="Frontend" />
         </div>
@@ -1521,7 +1532,7 @@
       </div>
 
       <!-- Backend & Database -->
-      <div class="skill-card sk-purple">
+      <div class="skill-card reveal-item sk-purple">
         <div class="skill-card-banner">
           <img src="backend.png" alt="Backend &amp; Database" />
         </div>
@@ -1545,7 +1556,7 @@
       </div>
 
       <!-- Hosting -->
-      <div class="skill-card sk-amber">
+      <div class="skill-card reveal-item sk-amber">
         <div class="skill-card-banner">
           <img src="hosting.png" alt="Hosting &amp; Deployment" />
         </div>
@@ -1567,7 +1578,7 @@
       </div>
 
       <!-- CMS -->
-      <div class="skill-card sk-pink">
+      <div class="skill-card reveal-item sk-pink">
         <div class="skill-card-banner">
           <img src="cms.png" alt="CMS" />
         </div>
@@ -1586,7 +1597,7 @@
       </div>
 
       <!-- Tools -->
-      <div class="skill-card sk-indigo">
+      <div class="skill-card reveal-item sk-indigo">
         <div class="skill-card-banner">
           <img src="tools.png" alt="Tools" />
         </div>
@@ -1619,9 +1630,9 @@
       <p class="section-desc" data-i18n="demo.desc">Real recordings of projects I've built — tangible proof of web development skills from start to finish.</p>
     </div>
 
-    <div class="demo-list reveal">
+    <div class="demo-list">
 
-      <div class="demo-row">
+      <div class="demo-row reveal-item">
         <div class="demo-video-wrap">
           <video controls autoplay muted loop playsinline preload="auto">
             <source src="20260616-0340-30.9267073.mp4" type="video/mp4" />
@@ -1641,46 +1652,6 @@
         </div>
       </div>
 
-      <div class="demo-row reverse">
-        <div class="demo-video-wrap">
-          <video controls autoplay muted loop playsinline preload="auto">
-            <source src="20260618-0800-23.7569276.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="demo-info">
-          <span class="demo-badge">Demo 2</span>
-          <h3 data-i18n="demo.title2">Data Entry &amp; Analysis System</h3>
-          <p data-i18n="demo.desc2">Demonstration of a system built for structured data entry, processing, and analysis with a clean, user-friendly dashboard.</p>
-          <div class="demo-tech">
-            <span data-i18n="demo.dataTag">Data Analysis</span>
-            <span>PHP</span>
-            <span>MySQL</span>
-            <span>HTML</span>
-            <span>CSS</span>
-            <span>JavaScript</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="demo-row">
-        <div class="demo-video-wrap">
-          <video controls autoplay muted loop playsinline preload="auto">
-            <source src="20260618-0550-04.7559945.mp4" type="video/mp4" />
-          </video>
-        </div>
-        <div class="demo-info">
-          <span class="demo-badge">Demo 3 · AI</span>
-          <h3 data-i18n="demo.title3">AI Integration in Web Application</h3>
-          <p data-i18n="demo.desc3">Demonstration of web application development with artificial intelligence (AI) integration for automation and a smarter user experience.</p>
-          <div class="demo-tech">
-            <span data-i18n="demo.aiTag">AI Integration</span>
-            <span>PHP</span>
-            <span>API</span>
-            <span>JavaScript</span>
-          </div>
-        </div>
-      </div>
-
     </div>
   </div>
 </section>
@@ -1693,12 +1664,12 @@
       <h2 class="section-title"><span data-i18n="pos.title">Suitable Positions</span><span class="section-title-line"></span></h2>
       <p class="section-desc" data-i18n="pos.desc">Positions relevant in the information technology industry.</p>
     </div>
-    <div class="positions-grid reveal">
-      <span class="position-badge" data-i18n="tag.fullstack">Full Stack Developer</span>
-      <span class="position-badge" data-i18n="tag.web">Web Developer</span>
-      <span class="position-badge" data-i18n="tag.software">Software Developer</span>
-      <span class="position-badge" data-i18n="tag.php">PHP Developer</span>
-      <span class="position-badge" data-i18n="tag.solutions">Website Solutions Developer</span>
+    <div class="positions-grid">
+      <span class="position-badge reveal-item" data-i18n="tag.fullstack">Full Stack Developer</span>
+      <span class="position-badge reveal-item" data-i18n="tag.web">Web Developer</span>
+      <span class="position-badge reveal-item" data-i18n="tag.software">Software Developer</span>
+      <span class="position-badge reveal-item" data-i18n="tag.php">PHP Developer</span>
+      <span class="position-badge reveal-item" data-i18n="tag.solutions">Website Solutions Developer</span>
     </div>
   </div>
 </section>
@@ -2021,6 +1992,21 @@
     });
   }, { threshold: 0.08 });
   reveals.forEach(el => revealObserver.observe(el));
+
+  // Scroll reveal — staggered slide-in per card
+  const revealItems = document.querySelectorAll('.reveal-item');
+  const revealItemObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const siblings = Array.from(e.target.parentElement.children).filter(c => c.classList.contains('reveal-item'));
+        const index = siblings.indexOf(e.target);
+        e.target.style.transitionDelay = `${Math.min(index, 8) * 80}ms`;
+        e.target.classList.add('visible');
+        revealItemObserver.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealItems.forEach(el => revealItemObserver.observe(el));
 
   // Active nav link on scroll
   const navItems = document.querySelectorAll('.nav-links a');
