@@ -1121,206 +1121,6 @@
       transform: translateY(0) scale(1);
     }
 
-    /* ── CHAT ASSISTANT ── */
-    .chat-toggle {
-      position: fixed;
-      bottom: 1.5rem; right: 1.5rem;
-      width: 58px; height: 58px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      border: none;
-      box-shadow: 0 8px 28px rgba(99,102,241,0.5);
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer;
-      z-index: 1100;
-      transition: transform 0.25s;
-    }
-
-    .chat-toggle:hover { transform: scale(1.08); }
-
-    .chat-toggle .chat-dot {
-      position: absolute;
-      top: 4px; right: 4px;
-      width: 10px; height: 10px;
-      border-radius: 50%;
-      background: var(--success);
-      border: 2px solid var(--dark);
-      animation: pulseDot 2s ease-in-out infinite;
-    }
-
-    .chat-window {
-      position: fixed;
-      bottom: 5.5rem; right: 1.5rem;
-      width: 340px;
-      max-height: 480px;
-      background: rgba(11,17,32,0.97);
-      backdrop-filter: blur(20px);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      box-shadow: 0 16px 50px rgba(0,0,0,0.5);
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      z-index: 1100;
-    }
-
-    .chat-window.open { display: flex; }
-
-    @media (max-width: 500px) {
-      .chat-window { width: calc(100vw - 2rem); right: 1rem; bottom: 5rem; max-height: 70vh; }
-      .chat-toggle { bottom: 1rem; right: 1rem; }
-    }
-
-    .chat-header {
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #fff;
-      padding: 0.85rem 1.1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      font-weight: 700;
-      font-size: 0.88rem;
-    }
-
-    .chat-header .chat-header-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: #4ade80;
-      flex-shrink: 0;
-    }
-
-    .chat-close {
-      margin-left: auto;
-      background: none;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-      font-size: 1.1rem;
-      line-height: 1;
-      opacity: 0.85;
-    }
-
-    .chat-close:hover { opacity: 1; }
-
-    .chat-messages {
-      flex: 1;
-      overflow-y: auto;
-      padding: 1rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.7rem;
-      min-height: 220px;
-    }
-
-    .chat-msg {
-      max-width: 85%;
-      padding: 0.55rem 0.85rem;
-      border-radius: 12px;
-      font-size: 0.82rem;
-      line-height: 1.5;
-    }
-
-    .chat-msg.bot {
-      background: rgba(99,102,241,0.12);
-      border: 1px solid rgba(99,102,241,0.2);
-      color: var(--text);
-      align-self: flex-start;
-      border-bottom-left-radius: 3px;
-    }
-
-    .chat-msg.user {
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #fff;
-      align-self: flex-end;
-      border-bottom-right-radius: 3px;
-    }
-
-    .chat-msg.typing { opacity: 0.7; font-style: italic; }
-
-    .chat-msg a { color: #c7d2fe; text-decoration: underline; }
-    .chat-msg.user a { color: #fff; }
-
-    .chat-quick-replies {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.4rem;
-      padding: 0 1rem 0.9rem;
-    }
-
-    .chat-chip {
-      background: rgba(99,102,241,0.1);
-      border: 1px solid rgba(99,102,241,0.3);
-      color: #c7d2fe;
-      font-size: 0.76rem;
-      padding: 0.4rem 0.75rem;
-      border-radius: 999px;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-
-    .chat-chip:hover {
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      color: #fff;
-      border-color: transparent;
-    }
-
-    .chat-contact-btns {
-      display: flex;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-      flex-wrap: wrap;
-    }
-
-    .chat-contact-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.76rem;
-      font-weight: 700;
-      padding: 0.4rem 0.7rem;
-      border-radius: 999px;
-      text-decoration: none;
-      color: #fff;
-    }
-
-    .chat-contact-btn.wa { background: linear-gradient(135deg, #16a34a, #22c55e); }
-    .chat-contact-btn.mail { background: linear-gradient(135deg, var(--accent), var(--accent2)); }
-
-    .chat-input-row {
-      display: flex;
-      gap: 0.5rem;
-      padding: 0.75rem;
-      border-top: 1px solid var(--border);
-    }
-
-    .chat-input-row input {
-      flex: 1;
-      background: rgba(255,255,255,0.05);
-      border: 1px solid var(--border);
-      color: var(--text);
-      padding: 0.6rem 0.85rem;
-      border-radius: 999px;
-      font-size: 0.82rem;
-      outline: none;
-    }
-
-    .chat-input-row input:focus { border-color: var(--accent); }
-
-    .chat-send {
-      width: 38px; height: 38px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--accent), var(--accent2));
-      border: none;
-      color: #fff;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer;
-      flex-shrink: 0;
-      transition: transform 0.2s;
-    }
-
-    .chat-send:hover { transform: scale(1.08); }
-    .chat-send:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
-
     /* ── MOBILE FRIENDLY TWEAKS ── */
     @media (max-width: 768px) {
       /* skip the heavy background video on mobile — bandwidth & fixed-video rendering issues */
@@ -1361,7 +1161,7 @@
 <!-- NAV -->
 <nav>
   <a href="#about" class="nav-logo">
-    <img src="logo.png" alt="MSD Logo" class="logo-img" />
+    <span class="nav-logo-text">MSD</span>
   </a>
   <ul class="nav-links" id="navLinks">
     <li><a href="#about" data-i18n="nav.about">About</a></li>
@@ -1392,7 +1192,7 @@
     <div>
       <div class="hero-badge">
         <span class="badge-dot"></span>
-        <span data-i18n="hero.badge">Available for Freelance Projects</span>
+        <span data-i18n="hero.badge">Open to Opportunities</span>
       </div>
       <h1>Muhammad Shafiq Danial<br /><span>Bin Sharudin</span></h1>
       <p class="hero-sub">
@@ -1408,14 +1208,9 @@
           <div class="stat-sub" data-i18n="stat.years.sub">Full-stack web development</div>
         </div>
         <div class="stat">
-          <span class="stat-number" data-count="3">3</span>
-          <div class="stat-label" data-i18n="stat.packages">Packages Available</div>
-          <div class="stat-sub" data-i18n="stat.packages.sub">Starter, Business &amp; E-Commerce</div>
-        </div>
-        <div class="stat">
           <span class="stat-number" data-count="10">10+</span>
-          <div class="stat-label" data-i18n="stat.services">Services Offered</div>
-          <div class="stat-sub" data-i18n="stat.services.sub">From design to deployment</div>
+          <div class="stat-label" data-i18n="stat.services">Capabilities</div>
+          <div class="stat-sub" data-i18n="stat.services.sub">From frontend to backend</div>
         </div>
         <div class="stat">
           <span class="stat-number" data-count="20">20+</span>
@@ -1431,7 +1226,7 @@
         <span class="tag" data-i18n="tag.solutions">Website Solutions Developer</span>
       </div>
       <div class="hero-btns">
-        <a href="#demo" class="btn btn-primary"><span data-i18n="hero.btnDemo">View Demo Projects</span></a>
+        <a href="#demo" class="btn btn-primary"><span data-i18n="hero.btnDemo">View Projects</span></a>
         <a href="#contact" class="btn btn-outline"><span data-i18n="hero.btnContact">Contact Me</span></a>
       </div>
     </div>
@@ -1447,51 +1242,41 @@
 <section id="services">
   <div class="container">
     <div class="section-header">
-      <span class="section-label" data-i18n="services.label">What I Offer</span>
-      <h2 class="section-title"><span data-i18n="services.title">Web Development Services</span><span class="section-title-line"></span></h2>
-      <p class="section-desc" data-i18n="services.desc">Complete web solutions for individuals, SMEs, and corporate companies.</p>
+      <span class="section-label" data-i18n="services.label">What I Can Do</span>
+      <h2 class="section-title"><span data-i18n="services.title">Capabilities</span><span class="section-title-line"></span></h2>
+      <p class="section-desc" data-i18n="services.desc">Areas of expertise I bring to every web development project.</p>
     </div>
 
     <div class="services-grid">
       <div class="service-card reveal-item span-2 tint-indigo">
         <h3 data-i18n="services.custom">Custom Website Development</h3>
-        <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
       <div class="service-card reveal-item tint-violet">
         <h3 data-i18n="services.corporate">Corporate Website Development</h3>
-        <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
       <div class="service-card reveal-item tint-blue">
         <h3 data-i18n="services.ecommerce">E-Commerce Website Development</h3>
-        <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
       <div class="service-card reveal-item tint-cyan">
         <h3 data-i18n="services.dashboard">Dashboard &amp; Admin Panel Development</h3>
-        <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
       <div class="service-card reveal-item tint-blue">
         <h3 data-i18n="services.hosting">Hosting &amp; Domain Setup</h3>
-        <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
       <div class="service-card reveal-item span-2 tint-violet">
         <h3 data-i18n="services.payment">Payment Gateway Integration</h3>
-        <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
       <div class="service-card reveal-item tint-indigo">
         <h3 data-i18n="services.maintenance">Website Maintenance &amp; Support</h3>
-        <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
       <div class="service-card reveal-item tint-cyan">
         <h3 data-i18n="services.optimization">Website Optimization</h3>
-        <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
       <div class="service-card reveal-item tint-violet">
         <h3 data-i18n="services.database">Database Design &amp; Management</h3>
-        <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
       <div class="service-card reveal-item tint-indigo">
         <h3 data-i18n="services.bugfix">Bug Fixing &amp; Troubleshooting</h3>
-        <a href="#contact" class="service-link"><span data-i18n="services.viewPricing">Interested?</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
       </div>
     </div>
   </div>
@@ -1625,9 +1410,9 @@
 <section id="demo">
   <div class="container">
     <div class="section-header">
-      <span class="section-label" data-i18n="demo.label">Proof of Skill</span>
-      <h2 class="section-title"><span data-i18n="demo.title">My Demo Projects</span><span class="section-title-line"></span></h2>
-      <p class="section-desc" data-i18n="demo.desc">Real recordings of projects I've built — tangible proof of web development skills from start to finish.</p>
+      <span class="section-label" data-i18n="demo.label">Portfolio</span>
+      <h2 class="section-title"><span data-i18n="demo.title">My Projects</span><span class="section-title-line"></span></h2>
+      <p class="section-desc" data-i18n="demo.desc">Projects I've built — real work from concept to production.</p>
     </div>
 
     <div class="demo-list">
@@ -1639,9 +1424,9 @@
           </video>
         </div>
         <div class="demo-info">
-          <span class="demo-badge">Demo 1</span>
-          <h3 data-i18n="demo.title1">Web Development Project</h3>
-          <p data-i18n="demo.desc1">Demonstration of website development and functionality built using full-stack skills.</p>
+          <span class="demo-badge">Full Stack</span>
+          <h3 data-i18n="demo.title1">Full Stack Web Application</h3>
+          <p data-i18n="demo.desc1">A complete web application built with full-stack skills, from database design to UI implementation.</p>
           <div class="demo-tech">
             <span>PHP</span>
             <span>MySQL</span>
@@ -1678,27 +1463,21 @@
 <section id="contact">
   <div class="container">
     <div class="section-header">
-      <span class="section-label" data-i18n="contact.label">Let's Collaborate</span>
+      <span class="section-label" data-i18n="contact.label">Let's Connect</span>
       <h2 class="section-title"><span data-i18n="contact.title">Contact Me</span><span class="section-title-line"></span></h2>
-      <p class="section-desc" data-i18n="contact.desc">Got a project in mind? Don't hesitate to reach out.</p>
+      <p class="section-desc" data-i18n="contact.desc">Interested in working together? Let's talk.</p>
     </div>
 
     <div class="contact-wrapper reveal">
       <div class="contact-links">
         <a href="mailto:shafiqopz9@gmail.com" class="contact-item">
-          <div class="contact-item-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-          </div>
           <div>
             <div class="contact-item-label" data-i18n="contact.emailLabel">Email</div>
             <div class="contact-item-value">shafiqopz9@gmail.com</div>
           </div>
           <svg class="contact-item-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
         </a>
-        <a href="https://wa.me/601139641194?text=Saya%20berminat%20dengan%20servis%20ini" class="contact-item wa" target="_blank" rel="noopener">
-          <div class="contact-item-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 3.5a8.83 8.83 0 0 0-7.65 13.27L3 21l4.4-1.34a8.85 8.85 0 0 0 4.65 1.3h.01a8.86 8.86 0 0 0 8.83-8.78 8.78 8.78 0 0 0-2.69-6.4Zm-5.55 13.4h-.01a7.36 7.36 0 0 1-3.75-1.03l-.27-.16-2.78.85.84-2.7-.18-.28a7.34 7.34 0 0 1 11.34-9.19 7.32 7.32 0 0 1 2.22 5.27 7.35 7.35 0 0 1-7.41 7.24Zm4.04-5.5c-.22-.11-1.3-.64-1.5-.72-.2-.07-.35-.11-.5.11-.15.22-.57.72-.7.86-.13.15-.26.16-.48.05-.22-.1-.93-.34-1.78-1.1a6.68 6.68 0 0 1-1.23-1.53c-.13-.22-.01-.34.11-.46.11-.11.24-.27.36-.41.12-.13.16-.23.24-.38.08-.15.04-.27-.02-.38-.06-.11-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.41-.14 0-.31-.01-.47-.01-.16 0-.42.06-.64.3-.22.24-.84.82-.84 1.99 0 1.17.86 2.31.98 2.47.12.16 1.6 2.46 3.9 3.35 2.3.9 2.3.6 2.71.56.41-.03 1.3-.53 1.49-1.04.18-.51.18-.94.13-1.04-.05-.1-.2-.16-.42-.27Z"/></svg>
-          </div>
+        <a href="https://wa.me/601139641194?text=Hello" class="contact-item wa" target="_blank" rel="noopener">
           <div>
             <div class="contact-item-label">WhatsApp</div>
             <div class="contact-item-value">+60 11-3964 1194</div>
@@ -1707,13 +1486,13 @@
         </a>
       </div>
       <div class="contact-cta">
-        <p data-i18n="contact.ctaText">Ready to start your project? Contact me today.</p>
+        <p data-i18n="contact.ctaText">Interested in working together? Let's talk.</p>
         <div class="contact-cta-buttons">
           <a href="mailto:shafiqopz9@gmail.com" class="btn btn-primary">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
             <span data-i18n="contact.sendEmail">Send Email</span>
           </a>
-          <a href="https://wa.me/601139641194?text=Saya%20berminat%20dengan%20servis%20ini" class="btn btn-whatsapp" target="_blank" rel="noopener">
+          <a href="https://wa.me/601139641194?text=Hello" class="btn btn-whatsapp" target="_blank" rel="noopener">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.32A8.86 8.86 0 0 0 12.05 3.5a8.83 8.83 0 0 0-7.65 13.27L3 21l4.4-1.34a8.85 8.85 0 0 0 4.65 1.3h.01a8.86 8.86 0 0 0 8.83-8.78 8.78 8.78 0 0 0-2.69-6.4Zm-5.55 13.4h-.01a7.36 7.36 0 0 1-3.75-1.03l-.27-.16-2.78.85.84-2.7-.18-.28a7.34 7.34 0 0 1 11.34-9.19 7.32 7.32 0 0 1 2.22 5.27 7.35 7.35 0 0 1-7.41 7.24Zm4.04-5.5c-.22-.11-1.3-.64-1.5-.72-.2-.07-.35-.11-.5.11-.15.22-.57.72-.7.86-.13.15-.26.16-.48.05-.22-.1-.93-.34-1.78-1.1a6.68 6.68 0 0 1-1.23-1.53c-.13-.22-.01-.34.11-.46.11-.11.24-.27.36-.41.12-.13.16-.23.24-.38.08-.15.04-.27-.02-.38-.06-.11-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.41-.14 0-.31-.01-.47-.01-.16 0-.42.06-.64.3-.22.24-.84.82-.84 1.99 0 1.17.86 2.31.98 2.47.12.16 1.6 2.46 3.9 3.35 2.3.9 2.3.6 2.71.56.41-.03 1.3-.53 1.49-1.04.18-.51.18-.94.13-1.04-.05-.1-.2-.16-.42-.27Z"/></svg>
             <span data-i18n="contact.sendWA">Send WhatsApp</span>
           </a>
@@ -1727,64 +1506,35 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-logo">
-      <img src="logo.png" alt="MSD Logo" />
+      <span class="nav-logo-text">MSD</span>
     </div>
     <div class="footer-copy">
       <p>&#169; 2025 <span>Muhammad Shafiq Danial Bin Sharudin</span>. <span data-i18n="footer.rights">All rights reserved.</span></p>
     </div>
     <div class="footer-links">
       <a href="#about" data-i18n="nav.about">About</a>
-      <a href="#services" data-i18n="nav.services">Services</a>
+      <a href="#skills" data-i18n="nav.skills">Skills</a>
       <a href="#contact" data-i18n="nav.contact">Contact</a>
     </div>
   </div>
 </footer>
 
-<!-- CHAT ASSISTANT -->
-<button class="chat-toggle" id="chatToggle" aria-label="Chat with me">
-  <span class="chat-dot"></span>
-  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
-</button>
-
-<div class="chat-window" id="chatWindow">
-  <div class="chat-header">
-    <span class="chat-header-dot"></span>
-    <span data-i18n="chat.header">Ask Assistant</span>
-    <button class="chat-close" id="chatClose" aria-label="Close">&times;</button>
-  </div>
-  <div class="chat-messages" id="chatMessages"></div>
-  <div class="chat-quick-replies" id="chatQuickReplies">
-    <button class="chat-chip" data-faq="harga"><span data-i18n="chat.faq.harga.label">Pricing &amp; Packages</span></button>
-    <button class="chat-chip" data-faq="servis"><span data-i18n="chat.faq.servis.label">Services Offered</span></button>
-    <button class="chat-chip" data-faq="tempoh"><span data-i18n="chat.faq.tempoh.label">Project Timeline</span></button>
-    <button class="chat-chip" data-faq="renewal"><span data-i18n="chat.faq.renewal.label">Renewal Fees</span></button>
-    <button class="chat-chip" data-faq="mula"><span data-i18n="chat.faq.mula.label">How to Get Started</span></button>
-  </div>
-  <div class="chat-input-row">
-    <input type="text" id="chatInput" data-i18n-placeholder="chat.placeholder" placeholder="Or type your question..." />
-    <button class="chat-send" id="chatSend" aria-label="Send">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-    </button>
-  </div>
-</div>
-
 <script>
-  // ── Language switcher (EN main, MS alternate) ──
   const I18N = {
     en: {
-      'nav.about': 'About', 'nav.skills': 'Skills', 'nav.services': 'Services', 'nav.demo': 'Demo',
-      'nav.packages': 'Packages', 'nav.contact': 'Contact', 'nav.cta': 'Contact Me',
-      'hero.badge': 'Available for Freelance Projects',
+      'nav.about': 'About', 'nav.skills': 'Skills', 'nav.services': 'Capabilities', 'nav.demo': 'Projects',
+      'nav.contact': 'Contact', 'nav.cta': 'Contact Me',
+      'hero.badge': 'Open to Opportunities',
       'hero.role': 'Full Stack Developer',
       'hero.role2': 'PHP &amp; Web Solutions Specialist',
       'hero.bio': 'Full Stack Developer with experience designing, building, and launching web applications from concept to production. Skilled in frontend &amp; backend development, database management, server deployment, and hosting configuration.',
       'tag.fullstack': 'Full Stack Developer', 'tag.php': 'PHP Developer', 'tag.web': 'Web Developer',
       'tag.software': 'Software Developer', 'tag.solutions': 'Website Solutions Developer',
-      'hero.btnDemo': 'View Demo Projects', 'hero.btnContact': 'Contact Me',
-      'stat.years': 'Years of Experience', 'stat.packages': 'Packages Available',
-      'stat.services': 'Services Offered', 'stat.tech': 'Technologies Mastered',
-      'stat.years.sub': 'Full-stack web development', 'stat.packages.sub': 'Starter, Business &amp; E-Commerce',
-      'stat.services.sub': 'From design to deployment', 'stat.tech.sub': 'PHP, MySQL, JavaScript &amp; more',
+      'hero.btnDemo': 'View Projects', 'hero.btnContact': 'Contact Me',
+      'stat.years': 'Years of Experience',
+      'stat.services': 'Capabilities', 'stat.tech': 'Technologies Mastered',
+      'stat.years.sub': 'Full-stack web development',
+      'stat.services.sub': 'From frontend to backend', 'stat.tech.sub': 'PHP, MySQL, JavaScript &amp; more',
       'skills.label': 'Expertise', 'skills.title': 'Technical Skills',
       'skills.desc': 'Full-stack skills — from UI design to server and database management.',
       'skills.cat.backenddb': 'Backend &amp; Database',
@@ -1792,74 +1542,39 @@
       'skill.responsive': 'Responsive Design', 'skill.restapi': 'REST API Development',
       'skill.auth': 'Auth &amp; Authorization', 'skill.dbdesign': 'Database Design',
       'skill.queryopt': 'Query Optimization', 'skill.vps': 'VPS Management', 'skill.linux': 'Linux Server',
-      'services.label': 'What I Offer', 'services.title': 'Web Development Services',
-      'services.desc': 'Complete web solutions for individuals, SMEs, and corporate companies.',
+      'services.label': 'What I Can Do', 'services.title': 'Capabilities',
+      'services.desc': 'Areas of expertise I bring to every web development project.',
       'services.custom': 'Custom Website Development', 'services.corporate': 'Corporate Website Development',
       'services.ecommerce': 'E-Commerce Website Development', 'services.dashboard': 'Dashboard &amp; Admin Panel Development',
       'services.hosting': 'Hosting &amp; Domain Setup', 'services.payment': 'Payment Gateway Integration',
       'services.maintenance': 'Website Maintenance &amp; Support', 'services.optimization': 'Website Optimization',
       'services.database': 'Database Design &amp; Management', 'services.bugfix': 'Bug Fixing &amp; Troubleshooting',
-      'services.viewPricing': 'Interested?',
-      'demo.label': 'Proof of Skill', 'demo.title': 'My Demo Projects',
-      'demo.desc': "Real recordings of projects I've built — tangible proof of web development skills from start to finish.",
-      'demo.title1': 'Web Development Project',
-      'demo.desc1': 'Demonstration of website development and functionality built using full-stack skills.',
-      'demo.title2': 'Data Entry &amp; Analysis System',
-      'demo.desc2': 'Demonstration of a system built for structured data entry, processing, and analysis with a clean, user-friendly dashboard.',
-      'demo.dataTag': 'Data Analysis',
-      'demo.title3': 'AI Integration in Web Application',
-      'demo.desc3': 'Demonstration of web application development with artificial intelligence (AI) integration for automation and a smarter user experience.',
-      'demo.aiTag': 'AI Integration',
-      'pkg.label': 'Pricing &amp; Packages', 'pkg.title': 'Website Development Packages',
-      'pkg.desc': 'Choose the package that fits your business needs and budget.',
-      'pkg.starter.banner': 'Starter Package', 'pkg.off33': '33% off',
-      'pkg.starter.note': 'Suitable for small businesses &amp; individuals',
-      'pkg.renewTitle': 'One-time payment (project)',
-      'pkg.starter.hosting': 'Hosting ~RM30–50/month (starting month 2)',
-      'pkg.domainRenew': 'Domain ~RM20–100/year (starting year 2)',
-      'pkg.choose': 'Choose This Package',
-      'feat.pages5': '5-page website', 'feat.mobile': 'Mobile responsive design', 'feat.contactform': 'Contact form',
-      'feat.domainsetup': 'Domain setup', 'feat.hostingsetup': 'Hosting setup', 'feat.ssl': 'SSL certificate',
-      'feat.freedomain': 'Free domain for 1 year', 'feat.basicseo': 'Basic SEO', 'feat.usermanual': 'User manual',
-      'feat.support1m': '1 month technical support',
-      'pkg.business.banner': '⭐ Most Popular', 'pkg.off14': '14% off',
-      'pkg.business.note': 'Suitable for SMEs &amp; companies',
-      'feat.uniquedesign': 'Unique &amp; custom design', 'feat.adminpanel': 'Admin panel / dashboard',
-      'feat.blog': 'Blog / news section', 'feat.dbintegration': 'Database integration',
-      'feat.fulldocs': 'Complete documentation',
-      'pkg.ecommerce.banner': 'E-Commerce Package',
-      'pkg.ecommerce.note': 'Suitable for online stores &amp; large businesses',
-      'pkg.ecommerce.hosting': 'Hosting ~RM50–100/month (starting month 2)',
-      'feat.productmgmt': 'Product management', 'feat.cart': 'Shopping cart',
-      'feat.paymentgateway': 'Payment gateway integration', 'feat.ordermgmt': 'Order management',
-      'feat.admindash': 'Admin dashboard', 'feat.training': 'Training session',
-      'feat.support3m': '3 months technical support',
+      'demo.label': 'Portfolio', 'demo.title': 'My Projects',
+      'demo.desc': "Projects I've built — real work from concept to production.",
+      'demo.title1': 'Full Stack Web Application',
+      'demo.desc1': 'A complete web application built with full-stack skills, from database design to UI implementation.',
       'pos.label': 'Positions', 'pos.title': 'Suitable Positions',
       'pos.desc': 'Positions relevant in the information technology industry.',
-      'contact.label': "Let's Collaborate", 'contact.title': 'Contact Me',
-      'contact.desc': "Got a project in mind? Don't hesitate to reach out.",
-      'contact.emailLabel': 'Email', 'contact.ctaText': 'Ready to start your project? Contact me today.',
+      'contact.label': "Let's Connect", 'contact.title': 'Contact Me',
+      'contact.desc': "Interested in working together? Let's talk.",
+      'contact.emailLabel': 'Email', 'contact.ctaText': "Interested in working together? Let's talk.",
       'contact.sendEmail': 'Send Email', 'contact.sendWA': 'Send WhatsApp',
-      'footer.rights': 'All rights reserved.',
-      'chat.header': 'Ask Assistant', 'chat.placeholder': 'Or type your question...',
-      'chat.faq.harga.label': 'Pricing &amp; Packages', 'chat.faq.servis.label': 'Services Offered',
-      'chat.faq.tempoh.label': 'Project Timeline', 'chat.faq.renewal.label': 'Renewal Fees',
-      'chat.faq.mula.label': 'How to Get Started'
+      'footer.rights': 'All rights reserved.'
     },
     ms: {
-      'nav.about': 'Tentang', 'nav.skills': 'Kemahiran', 'nav.services': 'Servis', 'nav.demo': 'Demo',
-      'nav.packages': 'Pakej', 'nav.contact': 'Hubungi', 'nav.cta': 'Hubungi Saya',
-      'hero.badge': 'Sedia Menerima Projek Freelance',
+      'nav.about': 'Tentang', 'nav.skills': 'Kemahiran', 'nav.services': 'Keupayaan', 'nav.demo': 'Projek',
+      'nav.contact': 'Hubungi', 'nav.cta': 'Hubungi Saya',
+      'hero.badge': 'Terbuka untuk Peluang',
       'hero.role': 'Pembangun Full Stack',
       'hero.role2': 'Pakar Penyelesaian PHP &amp; Web',
       'hero.bio': 'Pembangun Full Stack dengan pengalaman dalam mereka bentuk, membangun, dan melancarkan aplikasi web dari konsep hingga pengeluaran. Mahir dalam pembangunan frontend &amp; backend, pengurusan pangkalan data, deployment server, dan konfigurasi hosting.',
       'tag.fullstack': 'Pembangun Full Stack', 'tag.php': 'Pembangun PHP', 'tag.web': 'Pembangun Web',
       'tag.software': 'Pembangun Perisian', 'tag.solutions': 'Pembangun Penyelesaian Laman Web',
-      'hero.btnDemo': 'Lihat Demo Projek', 'hero.btnContact': 'Hubungi Saya',
-      'stat.years': 'Tahun Pengalaman', 'stat.packages': 'Pakej Tersedia',
-      'stat.services': 'Servis Ditawarkan', 'stat.tech': 'Teknologi Dikuasai',
-      'stat.years.sub': 'Pembangunan web full-stack', 'stat.packages.sub': 'Starter, Business &amp; E-Commerce',
-      'stat.services.sub': 'Dari reka bentuk hingga deployment', 'stat.tech.sub': 'PHP, MySQL, JavaScript &amp; lain-lain',
+      'hero.btnDemo': 'Lihat Projek', 'hero.btnContact': 'Hubungi Saya',
+      'stat.years': 'Tahun Pengalaman',
+      'stat.services': 'Keupayaan', 'stat.tech': 'Teknologi Dikuasai',
+      'stat.years.sub': 'Pembangunan web full-stack',
+      'stat.services.sub': 'Dari frontend ke backend', 'stat.tech.sub': 'PHP, MySQL, JavaScript &amp; lain-lain',
       'skills.label': 'Kepakaran', 'skills.title': 'Kemahiran Teknikal',
       'skills.desc': 'Kemahiran merentasi stack penuh — dari reka bentuk UI hingga pengurusan server dan pangkalan data.',
       'skills.cat.backenddb': 'Backend &amp; Database',
@@ -1867,59 +1582,24 @@
       'skill.responsive': 'Reka Bentuk Responsif', 'skill.restapi': 'Pembangunan REST API',
       'skill.auth': 'Pengesahan &amp; Kebenaran', 'skill.dbdesign': 'Reka Bentuk Database',
       'skill.queryopt': 'Pengoptimuman Query', 'skill.vps': 'Pengurusan VPS', 'skill.linux': 'Pelayan Linux',
-      'services.label': 'Apa Yang Saya Tawarkan', 'services.title': 'Servis Pembangunan Web',
-      'services.desc': 'Penyelesaian web menyeluruh untuk individu, PKS, dan syarikat korporat.',
+      'services.label': 'Apa Yang Saya Mampu', 'services.title': 'Keupayaan',
+      'services.desc': 'Bidang kepakaran yang saya bawa dalam setiap projek pembangunan web.',
       'services.custom': 'Pembangunan Laman Web Tersuai', 'services.corporate': 'Pembangunan Laman Web Korporat',
       'services.ecommerce': 'Pembangunan Laman Web E-Commerce', 'services.dashboard': 'Pembangunan Dashboard &amp; Admin Panel',
       'services.hosting': 'Persediaan Hosting &amp; Domain', 'services.payment': 'Integrasi Payment Gateway',
       'services.maintenance': 'Penyelenggaraan &amp; Sokongan Laman Web', 'services.optimization': 'Pengoptimuman Laman Web',
       'services.database': 'Reka Bentuk &amp; Pengurusan Database', 'services.bugfix': 'Pembaikan Bug &amp; Penyelesaian Masalah',
-      'services.viewPricing': 'Berminat?',
-      'demo.label': 'Bukti Kemahiran', 'demo.title': 'Demo Projek Saya',
-      'demo.desc': 'Rakaman sebenar projek yang telah saya bina — bukti nyata kemahiran pembangunan web dari mula hingga siap.',
-      'demo.title1': 'Projek Pembangunan Web',
-      'demo.desc1': 'Demonstrasi pembangunan dan fungsi website yang telah dibina menggunakan kemahiran full stack.',
-      'demo.title2': 'Sistem Kemasukan &amp; Analisis Data',
-      'demo.desc2': 'Demonstrasi sistem yang dibina untuk kemasukan data berstruktur, pemprosesan, dan analisis dengan dashboard yang kemas dan mudah digunakan.',
-      'demo.dataTag': 'Analisis Data',
-      'demo.title3': 'Integrasi AI dalam Web Application',
-      'demo.desc3': 'Demonstrasi pembangunan aplikasi web dengan integrasi kecerdasan buatan (AI) untuk automasi dan pengalaman pengguna yang lebih pintar.',
-      'demo.aiTag': 'Integrasi AI',
-      'pkg.label': 'Harga &amp; Pakej', 'pkg.title': 'Pakej Pembangunan Laman Web',
-      'pkg.desc': 'Pilih pakej yang sesuai dengan keperluan dan bajet perniagaan anda.',
-      'pkg.starter.banner': 'Pakej Starter', 'pkg.off33': '33% off',
-      'pkg.starter.note': 'Sesuai untuk perniagaan kecil &amp; individu',
-      'pkg.renewTitle': 'Bayaran satu kali (projek)',
-      'pkg.starter.hosting': 'Hosting ~RM30–50/bulan (mulai bulan ke-2)',
-      'pkg.domainRenew': 'Domain ~RM20–100/tahun (mulai tahun ke-2)',
-      'pkg.choose': 'Pilih Pakej Ini',
-      'feat.pages5': '5 halaman website', 'feat.mobile': 'Reka bentuk responsif mobile', 'feat.contactform': 'Borang hubungi',
-      'feat.domainsetup': 'Domain setup', 'feat.hostingsetup': 'Hosting setup', 'feat.ssl': 'Sijil SSL',
-      'feat.freedomain': 'Free domain 1 tahun', 'feat.basicseo': 'SEO asas', 'feat.usermanual': 'Manual pengguna',
-      'feat.support1m': '1 bulan sokongan teknikal',
-      'pkg.business.banner': '⭐ Paling Popular', 'pkg.off14': '14% off',
-      'pkg.business.note': 'Sesuai untuk PKS &amp; syarikat',
-      'feat.uniquedesign': 'Reka bentuk unik &amp; tersuai', 'feat.adminpanel': 'Admin panel / dashboard',
-      'feat.blog': 'Bahagian blog / berita', 'feat.dbintegration': 'Integrasi database',
-      'feat.fulldocs': 'Dokumentasi lengkap',
-      'pkg.ecommerce.banner': 'Pakej E-Commerce',
-      'pkg.ecommerce.note': 'Sesuai untuk kedai online &amp; perniagaan besar',
-      'pkg.ecommerce.hosting': 'Hosting ~RM50–100/bulan (mulai bulan ke-2)',
-      'feat.productmgmt': 'Pengurusan produk', 'feat.cart': 'Troli beli-belah',
-      'feat.paymentgateway': 'Integrasi payment gateway', 'feat.ordermgmt': 'Pengurusan pesanan',
-      'feat.admindash': 'Admin dashboard', 'feat.training': 'Sesi latihan',
-      'feat.support3m': '3 bulan sokongan teknikal',
+      'demo.label': 'Portfolio', 'demo.title': 'Projek Saya',
+      'demo.desc': 'Projek yang telah saya bina — kerja nyata dari konsep hingga siap.',
+      'demo.title1': 'Aplikasi Web Full Stack',
+      'demo.desc1': 'Aplikasi web lengkap yang dibina dengan kemahiran full stack, dari reka bentuk pangkalan data hingga pelaksanaan UI.',
       'pos.label': 'Jawatan', 'pos.title': 'Jawatan Yang Sesuai',
       'pos.desc': 'Jawatan-jawatan yang relevan dalam industri teknologi maklumat.',
-      'contact.label': 'Mari Berkolaborasi', 'contact.title': 'Hubungi Saya',
-      'contact.desc': 'Ada projek dalam fikiran? Jangan ragu untuk berbincang.',
-      'contact.emailLabel': 'Emel', 'contact.ctaText': 'Sedia untuk memulakan projek anda? Hubungi saya hari ini.',
+      'contact.label': 'Mari Berhubung', 'contact.title': 'Hubungi Saya',
+      'contact.desc': 'Berminat untuk bekerjasama? Jom berbincang.',
+      'contact.emailLabel': 'Emel', 'contact.ctaText': 'Berminat untuk bekerjasama? Jom berbincang.',
       'contact.sendEmail': 'Hantar Emel', 'contact.sendWA': 'Hantar WhatsApp',
-      'footer.rights': 'Hak cipta terpelihara.',
-      'chat.header': 'Tanya Pembantu', 'chat.placeholder': 'Atau taip soalan anda...',
-      'chat.faq.harga.label': 'Harga &amp; Pakej', 'chat.faq.servis.label': 'Servis Ditawarkan',
-      'chat.faq.tempoh.label': 'Tempoh Siap Projek', 'chat.faq.renewal.label': 'Caj Renewal',
-      'chat.faq.mula.label': 'Macam Mana Nak Mula'
+      'footer.rights': 'Hak cipta terpelihara.'
     }
   };
 
@@ -1945,7 +1625,6 @@
         opt.classList.toggle('active', opt.dataset.lang === lang);
       });
       localStorage.setItem('lang', lang);
-      if (typeof renderChatWelcome === 'function') renderChatWelcome();
     };
 
     if (!animate) { updateContent(); return; }
@@ -2032,137 +1711,6 @@
     });
   }, { threshold: 0.2 });
   skillBars.forEach(el => skillBarObserver.observe(el));
-
-  // Chat Assistant — FAQ quick-replies auto-answer; free-text questions go direct to WhatsApp/Email
-  const chatToggle = document.getElementById('chatToggle');
-  const chatWindow = document.getElementById('chatWindow');
-  const chatClose = document.getElementById('chatClose');
-  const chatMessages = document.getElementById('chatMessages');
-  const chatQuickReplies = document.getElementById('chatQuickReplies');
-  const chatInput = document.getElementById('chatInput');
-  const chatSend = document.getElementById('chatSend');
-
-  const WA_NUMBER = '601139641194';
-  const MAIL_ADDR = 'shafiqopz9@gmail.com';
-
-  const CHAT_TEXT = {
-    en: {
-      welcome: 'Hi! 👋 Pick a question below for a quick answer, or type your own question.',
-      waText: "I'm interested in this service",
-      mailSubject: 'Interested in your service',
-      waLabel: 'WhatsApp',
-      mailLabel: 'Email',
-      customAnswer: (btns) => `For specific questions like this, it's faster to contact Shafiq directly:${btns}`,
-      faq: {
-        harga: { label: 'Pricing &amp; Packages', answer: `There are 3 packages:<br>
-          • <b>Starter</b> — RM1,000 (was RM1,500)<br>
-          • <b>Business</b> — RM3,000 (was RM3,500) ⭐ Most popular<br>
-          • <b>E-Commerce</b> — RM6,000 (was RM7,000)<br><br>
-          All packages include <b>free domain for 1 year</b>. Want to know more about which package suits you?` },
-        servis: { label: 'Services Offered', answer: `Services offered include:<br>
-          Custom website, corporate website, e-commerce, dashboard/admin panel, hosting &amp; domain setup, payment gateway integration, maintenance &amp; support, optimization, database design, and bug fixing.` },
-        tempoh: { label: 'Project Timeline', answer: `Estimated completion time:<br>
-          • Starter: ~1-3 weeks<br>
-          • Business: ~4-6 weeks<br>
-          • E-Commerce: ~4-8 weeks<br><br>
-          Actual timeline depends on project scope &amp; complexity.` },
-        renewal: { label: 'Renewal Fees', answer: `After project completion:<br>
-          • Hosting ~RM30-50/month (Starter &amp; Business) or ~RM50-100/month (E-Commerce), starting month 2<br>
-          • Domain ~RM20-100/year, starting year 2 (first year free)` },
-        mula: { label: 'How to Get Started', answer: `It's simple! Contact Shafiq directly via WhatsApp or Email to discuss your project requirements, choose a suitable package, and the project can start as soon as the deposit is received.` }
-      }
-    },
-    ms: {
-      welcome: 'Hai! 👋 Pilih soalan di bawah untuk jawapan pantas, atau taip soalan anda sendiri.',
-      waText: 'Saya berminat dengan servis ini',
-      mailSubject: 'Berminat dengan servis anda',
-      waLabel: 'WhatsApp',
-      mailLabel: 'Emel',
-      customAnswer: (btns) => `Untuk soalan khusus seperti ini, lebih pantas jika anda hubungi Shafiq terus:${btns}`,
-      faq: {
-        harga: { label: 'Harga &amp; Pakej', answer: `Ada 3 pakej:<br>
-          • <b>Starter</b> — RM1,000 (asal RM1,500)<br>
-          • <b>Business</b> — RM3,000 (asal RM3,500) ⭐ Paling popular<br>
-          • <b>E-Commerce</b> — RM6,000 (asal RM7,000)<br><br>
-          Semua pakej termasuk <b>free domain 1 tahun</b>. Nak tahu lebih detail pakej mana yang sesuai?` },
-        servis: { label: 'Servis Ditawarkan', answer: `Servis yang ditawarkan termasuk:<br>
-          Custom website, corporate website, e-commerce, dashboard/admin panel, hosting &amp; domain setup, payment gateway integration, maintenance &amp; support, optimization, database design, dan bug fixing.` },
-        tempoh: { label: 'Tempoh Siap Projek', answer: `Anggaran tempoh siap:<br>
-          • Starter: ~1-3 minggu<br>
-          • Business: ~4-6 minggu<br>
-          • E-Commerce: ~4-8 minggu<br><br>
-          Tempoh sebenar bergantung pada skop &amp; kerumitan projek.` },
-        renewal: { label: 'Caj Renewal', answer: `Lepas siap projek:<br>
-          • Hosting ~RM30-50/bulan (Starter &amp; Business) atau ~RM50-100/bulan (E-Commerce), bermula bulan ke-2<br>
-          • Domain ~RM20-100/tahun, bermula tahun ke-2 (tahun pertama free)` },
-        mula: { label: 'Macam Mana Nak Mula', answer: `Mudah je! Hubungi Shafiq terus melalui WhatsApp atau Emel untuk bincang keperluan projek anda, pilih pakej yang sesuai, dan projek boleh mula sebaik sahaja deposit diterima.` }
-      }
-    }
-  };
-
-  function getContactBtns() {
-    const t = CHAT_TEXT[currentLang] || CHAT_TEXT.en;
-    const waLink = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(t.waText)}`;
-    const mailLink = `mailto:${MAIL_ADDR}?subject=${encodeURIComponent(t.mailSubject)}`;
-    return `
-      <div class="chat-contact-btns">
-        <a class="chat-contact-btn wa" href="${waLink}" target="_blank" rel="noopener">${t.waLabel}</a>
-        <a class="chat-contact-btn mail" href="${mailLink}">${t.mailLabel}</a>
-      </div>`;
-  }
-
-  let chatOpen = false;
-
-  function openChat() {
-    chatWindow.classList.add('open');
-    chatOpen = true;
-    chatInput.focus();
-  }
-
-  function closeChat() {
-    chatWindow.classList.remove('open');
-    chatOpen = false;
-  }
-
-  chatToggle.addEventListener('click', () => { chatOpen ? closeChat() : openChat(); });
-  chatClose.addEventListener('click', closeChat);
-
-  function addMessage(html, who) {
-    const div = document.createElement('div');
-    div.className = `chat-msg ${who}`;
-    div.innerHTML = html;
-    chatMessages.appendChild(div);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
-    return div;
-  }
-
-  function renderChatWelcome() {
-    chatMessages.innerHTML = '';
-    const t = CHAT_TEXT[currentLang] || CHAT_TEXT.en;
-    addMessage(t.welcome, 'bot');
-  }
-
-  chatQuickReplies.querySelectorAll('.chat-chip').forEach(chip => {
-    chip.addEventListener('click', () => {
-      const t = CHAT_TEXT[currentLang] || CHAT_TEXT.en;
-      const item = t.faq[chip.dataset.faq];
-      if (!item) return;
-      addMessage(item.label, 'user');
-      addMessage(item.answer + getContactBtns(), 'bot');
-    });
-  });
-
-  function sendChat() {
-    const question = chatInput.value.trim();
-    if (!question) return;
-    const t = CHAT_TEXT[currentLang] || CHAT_TEXT.en;
-    addMessage(question, 'user');
-    chatInput.value = '';
-    addMessage(t.customAnswer(getContactBtns()), 'bot');
-  }
-
-  chatSend.addEventListener('click', sendChat);
-  chatInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') sendChat(); });
 
   applyLanguage(currentLang, false);
 </script>
