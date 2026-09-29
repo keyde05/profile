@@ -5051,3 +5051,54 @@ button.tss-sun:focus-visible .tss-sun-label {
   .portal.is-out,
   .portal * { animation: none !important; }
 }
+
+/* ============================================================
+   Pembetulan mobile
+   ============================================================ */
+
+/* Label portal di bawah gelang luar, bukan di tengah orbit (elak bertindih dengan lencana) */
+.tss { margin-bottom: 1.75rem; }
+
+.tss-sun-label {
+  top: calc(100% + var(--size) * 0.38 + 6px);
+}
+
+/* Kiraan aksara tidak patah baris */
+.uplink-label.flex {
+  gap: 0.75rem;
+}
+
+.uplink-label.flex > span:last-child {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 639px) {
+  /* Bulan latar lebih kecil & malap supaya tidak mengganggu teks */
+  .sky-moon { --m: 44px; }
+
+  @keyframes moon-fade {
+    0% { opacity: 0; }
+    8% { opacity: 0.3; }
+    92% { opacity: 0.3; }
+    100% { opacity: 0; }
+  }
+
+  /* Butang gelang ↑ lebih kecil di penjuru */
+  .h2d-progress {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .uplink-label { font-size: 10.5px; }
+}
+
+@media (max-width: 639px) {
+  #hud-dock .hud-location {
+    flex: 1 1 auto;
+    max-width: none;
+    font-size: 11px;
+  }
+}
