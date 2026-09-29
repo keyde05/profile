@@ -1,0 +1,1128 @@
+<!doctype html>
+<html lang="en" class="dark scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Muhammad Shafiq Danial | Full Stack Developer</title>
+    <meta name="description" content="Portfolio of Muhammad Shafiq Danial Bin Sharudin (MSD) — Full Stack Developer &amp; PHP &amp; Web Solutions Specialist. Building digital solutions from code to production." />
+    <meta property="og:title" content="Muhammad Shafiq Danial | Full Stack Developer" />
+    <meta property="og:description" content="Portfolio of Muhammad Shafiq Danial Bin Sharudin (MSD) — Full Stack Developer &amp; PHP &amp; Web Solutions Specialist. Building digital solutions from code to production." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="logo.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Muhammad Shafiq Danial | Full Stack Developer" />
+    <meta name="twitter:description" content="Portfolio of Muhammad Shafiq Danial Bin Sharudin (MSD) — Full Stack Developer &amp; PHP &amp; Web Solutions Specialist. Building digital solutions from code to production." />
+    <meta name="twitter:image" content="logo.png" />
+    <meta name="theme-color" content="#08090B" />
+
+    <link rel="icon" type="image/png" href="logo.png" />
+    <link rel="apple-touch-icon" href="logo.png" />
+    <link rel="preload" as="image" href="logo.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+
+    <!-- Three.js: peta modul supaya tambahan (bloom, persekitaran) berkongsi modul "three" yang sama -->
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.186.1/examples/jsm/"
+        }
+      }
+    </script>
+
+    <!-- Tailwind CSS (versi browser, tiada build diperlukan) -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+        --font-display: 'Space Grotesk', system-ui, sans-serif;
+        --font-mono: 'JetBrains Mono', monospace;
+      }
+    </style>
+
+    <!-- Ikon Lucide -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.546.0/dist/umd/lucide.min.js"></script>
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="bg-[#08090B] text-[#F4F5F7] antialiased selection:bg-[#B7FF3C] selection:text-[#08090B] min-h-screen">
+    <div class="min-h-screen bg-[#040507] text-[#F4F5F7] selection:bg-[#B7FF3C] selection:text-[#040507] relative overflow-x-hidden">
+
+      <!-- ==================================================== -->
+      <!-- SKRIN PEMBUKAAN: Point of Light -> Monogram           -->
+      <!-- ==================================================== -->
+      <div id="loading-screen" class="fixed inset-0 z-50 flex flex-col justify-between p-6 sm:p-12 md:p-16 bg-[#040507] text-[#F4F5F7] select-none overflow-hidden">
+        <!-- Latar: medan bintang, sistem orbit di sekeliling monogram, ufuk planet -->
+        <div class="intro-space" aria-hidden="true">
+          <div class="intro-stars"></div>
+          <div class="intro-stars is-far"></div>
+          <div class="intro-orbit" style="--d:34vmin; --t:26s"><span style="--c:#B7FF3C; --s:10px"></span></div>
+          <div class="intro-orbit is-tilt" style="--d:56vmin; --t:40s"><span style="--c:#36D9FF; --s:13px"></span></div>
+          <div class="intro-orbit" style="--d:80vmin; --t:62s"><span style="--c:#A78BFA; --s:16px"></span></div>
+          <div class="intro-orbit is-tilt" style="--d:108vmin; --t:90s"><span style="--c:#FFB547; --s:9px"></span></div>
+          <div class="intro-comet"></div>
+          <div class="intro-horizon"></div>
+        </div>
+        <div class="absolute inset-0 vignette-soft opacity-80 pointer-events-none"></div>
+
+        <!-- Top minimal bar -->
+        <div class="relative z-10 w-full flex items-center justify-between text-xs font-mono text-[#9299A5]">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-[#B7FF3C] animate-pulse"></span>
+            <span class="text-[#F4F5F7] tracking-widest font-semibold uppercase">MSD // DIGITAL ARCHITECTURE</span>
+          </div>
+          <button data-action="enter" class="px-3 py-1 rounded bg-[#101318] hover:bg-[#1A1F29] border border-white/10 text-[11px] text-[#9299A5] hover:text-[#B7FF3C] transition-colors cursor-pointer">
+            SKIP [ESC]
+          </button>
+        </div>
+
+        <!-- Center -->
+        <div class="relative z-10 my-auto flex flex-col items-center justify-center text-center max-w-4xl mx-auto w-full space-y-8">
+          <div class="relative w-36 h-36 sm:w-48 sm:h-48 flex items-center justify-center">
+            <div class="intro-light absolute w-4 h-4 bg-[#B7FF3C] rounded-full shadow-[0_0_50px_#B7FF3C]"></div>
+            <div class="intro-reticle absolute inset-0 rounded-3xl border border-white/15 backdrop-blur-md bg-[#08090B]/60 shadow-[0_0_60px_rgba(183,255,60,0.15)]"></div>
+
+            <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-[#B7FF3C]"></div>
+            <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-[#B7FF3C]"></div>
+            <div class="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-[#B7FF3C]"></div>
+            <div class="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-[#B7FF3C]"></div>
+
+            <svg viewBox="0 0 120 100" class="w-24 h-20 sm:w-28 sm:h-24 relative z-10" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path class="intro-path" pathLength="1" d="M28 75V25L45 50L62 25V75" stroke="#B7FF3C" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+              <path class="intro-path delay" pathLength="1" d="M66 35H88C94 35 94 48 88 48H72C66 48 66 65 72 65H92" stroke="#F4F5F7" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </div>
+
+          <div id="intro-identity" class="intro-reveal space-y-3">
+            <div class="text-3xl sm:text-5xl font-black font-display tracking-tight text-[#F4F5F7]">MSD</div>
+            <div class="text-sm sm:text-base font-mono tracking-widest text-[#B7FF3C] uppercase">MUHAMMAD SHAFIQ DANIAL</div>
+            <div class="text-xs sm:text-sm font-mono text-[#9299A5] tracking-wider">FULL STACK DEVELOPER · PHP &amp; WEB SOLUTIONS SPECIALIST</div>
+          </div>
+
+          <div id="intro-statement" class="intro-reveal lower pt-4 space-y-6">
+            <blockquote class="text-xl sm:text-3xl md:text-4xl font-black font-display tracking-tight text-[#F4F5F7] leading-tight">
+              “FROM CONCEPT TO CODE.<br />
+              <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#B7FF3C] via-[#36D9FF] to-[#F4F5F7]">FROM CODE TO PRODUCTION.”</span>
+            </blockquote>
+            <div class="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
+              <button data-action="enter" class="px-8 py-4 rounded-xl bg-[#B7FF3C] hover:bg-[#a5ee2e] text-[#08090B] font-mono font-black text-xs sm:text-sm uppercase tracking-widest transition-all shadow-[0_0_35px_rgba(183,255,60,0.4)] hover:shadow-[0_0_55px_rgba(183,255,60,0.65)] active:scale-[0.98] flex items-center gap-3 cursor-pointer">
+                <span>ENTER EXPERIENCE</span>
+                <i data-lucide="arrow-right" class="w-4 h-4 stroke-[3]"></i>
+              </button>
+              <button data-action="tutorial" type="button" class="px-6 py-4 rounded-xl bg-[#08090B]/70 hover:bg-[#101318] border border-white/15 hover:border-[#36D9FF]/60 text-[#F4F5F7] hover:text-[#36D9FF] font-mono font-bold text-xs sm:text-sm uppercase tracking-widest backdrop-blur-md transition-all active:scale-[0.98] flex items-center gap-3 cursor-pointer">
+                <i data-lucide="compass" class="w-4 h-4"></i>
+                <span>Tutorial</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom telemetry line -->
+        <div class="relative z-10 w-full flex items-center justify-between text-[11px] font-mono text-[#9299A5] border-t border-white/10 pt-4">
+          <span>COORDINATE: 00.00.00</span>
+          <span class="text-[#36D9FF]">AN ADVANCED DIGITAL INSTALLATION</span>
+        </div>
+      </div>
+
+      <!-- Kursor tersuai (desktop) -->
+      <div id="cursor" class="pointer-events-none fixed inset-0 z-50 overflow-hidden hidden" aria-hidden="true">
+        <div id="cursor-dot" class="fixed top-0 left-0 w-2 h-2 -ml-1 -mt-1 rounded-full bg-[#B7FF3C]"></div>
+        <div id="cursor-ring" class="fixed top-0 left-0 rounded-full border"></div>
+      </div>
+
+      <!-- ==================================================== -->
+      <!-- MOD UTAMA: DIGITAL ARCHITECTURE (3D)                 -->
+      <!-- ==================================================== -->
+      <div id="mode-3d" class="relative min-h-screen" hidden>
+        <!-- Kanvas 3D -->
+        <div class="fixed inset-0 z-0 pointer-events-auto">
+          <div id="universe-canvas" class="w-full h-full cursor-grab active:cursor-grabbing select-none" title="Explore the 3D Digital Dimension: Click and drag to inspect space"></div>
+          <div class="absolute inset-0 pointer-events-none vignette-strong opacity-80"></div>
+          <!-- Gelapkan adegan bila panel world dibuka supaya teks mudah dibaca -->
+          <div id="world-dim" class="absolute inset-0 bg-[#040507] pointer-events-none transition-opacity duration-700 opacity-0"></div>
+          <!-- Label struktur orbit (diletakkan oleh scenes.js) -->
+          <div id="orbit-labels" class="absolute inset-0 pointer-events-none overflow-hidden" aria-label="Select an architecture"></div>
+        </div>
+
+        <!-- Hab orbit: dipaparkan sebelum memilih seni bina -->
+        <div id="orbit-hub" class="fixed inset-0 z-20 pointer-events-none fade-in">
+          <!-- Tajuk -->
+          <div class="absolute inset-x-0 top-24 flex flex-col items-center text-center px-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#101318]/85 border border-white/10 backdrop-blur-md text-[11px] font-mono tracking-widest text-[#B7FF3C]">
+              <span class="w-1.5 h-1.5 rounded-full bg-[#B7FF3C] animate-pulse"></span>
+              <span>ORBIT HUB // 05 ARCHITECTURES</span>
+            </div>
+            <h2 class="mt-3 text-2xl sm:text-4xl font-black font-display tracking-tight text-[#F4F5F7]">SELECT AN ARCHITECTURE</h2>
+            <p class="mt-2 text-xs sm:text-sm font-mono text-[#9299A5]"><span class="hidden sm:inline">Scroll to move through the orbit · click to go inside</span><span class="sm:hidden">Swipe up / down to move · tap to go inside</span></p>
+          </div>
+
+          <!-- Rel menegak 01 → 05 (ikut scroll) -->
+          <nav id="orbit-rail" aria-label="Architectures" class="absolute right-8 top-1/2 -translate-y-1/2 hidden sm:flex flex-col items-end gap-1 pointer-events-auto"></nav>
+        </div>
+
+        <!-- Kilatan semasa kamera "masuk ke dalam" struktur -->
+        <div id="dive-warp" class="fixed inset-0 z-40 pointer-events-none" aria-hidden="true"></div>
+        <div id="dive-flash" class="fixed inset-0 z-40 pointer-events-none" aria-hidden="true"></div>
+
+        <!-- HUD -->
+        <div class="fixed inset-0 pointer-events-none z-30 flex flex-col justify-between p-4 sm:p-8">
+          <header id="hud-top" class="flex items-center justify-between w-full pointer-events-auto">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-xl bg-[#08090B]/90 border border-white/15 backdrop-blur-md flex items-center justify-center p-1 shadow-[0_0_25px_rgba(183,255,60,0.25)]">
+                <img src="logo.png" alt="MSD logo" class="w-full h-full object-contain" />
+              </div>
+              <div class="hidden sm:block">
+                <div class="text-xs font-mono font-bold tracking-wider text-[#F4F5F7] flex items-center gap-2">
+                  <span>DIGITAL ARCHITECTURE</span>
+                  <span class="text-white/20">/</span>
+                  <span class="text-[#36D9FF] text-[10px]">FACILITY</span>
+                </div>
+                <div class="text-[10px] font-mono text-[#9299A5] hidden sm:block">MUHAMMAD SHAFIQ DANIAL · FULL STACK SPECIALIST</div>
+              </div>
+            </div>
+
+            <button data-action="orbit" type="button" class="hidden md:flex items-center gap-2 px-4 py-2 rounded-xl bg-[#08090B]/85 border border-white/15 hover:border-[#B7FF3C] text-xs font-mono tracking-wider text-[#F4F5F7] hover:text-[#B7FF3C] backdrop-blur-xl shadow-2xl transition-colors cursor-pointer" hidden>
+              <i data-lucide="orbit" class="w-4 h-4 text-[#B7FF3C]"></i>
+              <span>ORBIT VIEW</span>
+              <span class="text-[10px] text-[#9299A5] border border-white/10 rounded px-1">ESC</span>
+            </button>
+
+            <div class="flex items-center gap-2.5">
+              <button data-action="tutorial" type="button" class="hud-btn w-9 h-9 grid place-items-center rounded-lg border border-white/15 bg-[#101318]/80 hover:bg-[#1A1F29] text-[#9299A5] hover:text-[#36D9FF] backdrop-blur-md transition-colors cursor-pointer" aria-label="Start the tutorial" title="Tutorial">
+                <i data-lucide="circle-help" class="w-4 h-4"></i>
+              </button>
+              <button data-action="contact" class="hud-btn px-4 py-1.5 rounded-lg bg-[#B7FF3C] hover:bg-[#a5ee2e] text-[#08090B] font-mono font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_20px_rgba(183,255,60,0.3)] cursor-pointer">Contact</button>
+            </div>
+          </header>
+
+          <footer id="hud-dock" class="w-full flex items-center justify-between gap-2 pointer-events-auto">
+            <div class="hud-location flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[#08090B]/80 border border-white/10 backdrop-blur-md text-xs font-mono min-w-0">
+              <span class="w-2 h-2 shrink-0 rounded-full bg-[#B7FF3C] animate-pulse"></span>
+              <span class="text-[#9299A5] hidden sm:inline">LOCATION:</span>
+              <span id="hud-location" class="text-[#F4F5F7] font-bold truncate">ORBIT HUB</span>
+            </div>
+            <button data-action="orbit" type="button" class="md:hidden p-3 rounded-xl bg-[#08090B]/80 border border-white/10 text-[#B7FF3C] backdrop-blur-md cursor-pointer" aria-label="Back to orbit view" hidden>
+              <i data-lucide="orbit" class="w-4 h-4"></i>
+            </button>
+            <div class="flex items-center gap-2">
+              <button id="hud-prev" class="p-3 rounded-xl bg-[#08090B]/80 border border-white/10 text-[#F4F5F7] hover:border-[#B7FF3C] disabled:opacity-30 disabled:cursor-not-allowed backdrop-blur-md transition-colors cursor-pointer" aria-label="Previous Sector">
+                <i data-lucide="arrow-left" class="w-4 h-4"></i>
+              </button>
+              <button id="hud-next" class="px-4 py-3 rounded-xl bg-[#08090B]/80 border border-white/10 text-[#F4F5F7] hover:border-[#B7FF3C] hover:text-[#B7FF3C] disabled:opacity-30 disabled:cursor-not-allowed backdrop-blur-md transition-colors font-mono text-xs font-bold flex items-center gap-2 cursor-pointer" aria-label="Next Sector">
+                <span data-label class="hidden sm:inline">NEXT ARCHITECTURE</span>
+                <span data-label-short class="sm:hidden">NEXT</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </button>
+            </div>
+          </footer>
+        </div>
+
+        <!-- ========== WORLD 01: IDENTITY ========== -->
+        <div class="world" data-world-panel="0" data-enter="up" hidden>
+          <div id="identity-scan" class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 min-h-screen flex flex-col justify-center py-24 pointer-events-none">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+              <!-- Teks -->
+              <div class="lg:col-span-7 space-y-6 order-2 lg:order-1">
+                <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#101318]/90 border border-white/10 text-xs font-mono tracking-widest text-[#B7FF3C] backdrop-blur-md pointer-events-auto shadow-[0_0_20px_rgba(183,255,60,0.15)]">
+                  <span class="w-2 h-2 rounded-full bg-[#B7FF3C] animate-pulse"></span>
+                  <span>01 IDENTITY // WHO IS MSD?</span>
+                </div>
+
+                <div class="space-y-3">
+                  <div class="orbit-rise text-xs sm:text-sm font-mono tracking-widest text-[#36D9FF] uppercase">Full Stack Developer · PHP &amp; Web Solutions Specialist</div>
+                  <h1 class="text-4xl sm:text-6xl xl:text-7xl font-black font-display tracking-tight text-[#F4F5F7] leading-[0.98] select-none">
+                    <span class="orbit-rise-line block" style="--delay:.15s">MUHAMMAD SHAFIQ DANIAL</span>
+                    <span class="orbit-rise-line block text-transparent bg-clip-text bg-gradient-to-r from-[#B7FF3C] via-[#36D9FF] to-[#F4F5F7] drop-shadow-[0_0_40px_rgba(183,255,60,0.35)]" style="--delay:.35s">BIN SHARUDIN</span>
+                  </h1>
+                  <p class="orbit-rise text-base sm:text-lg text-[#9299A5] max-w-2xl font-normal leading-relaxed pt-2" style="--delay:.5s">
+                    Full Stack Developer with experience designing, building, and launching web applications from concept to production. Skilled in frontend and backend development, database management, server deployment, and hosting configuration.
+                  </p>
+                </div>
+
+                <div class="orbit-rise pt-4 border-t border-white/10 max-w-xl pointer-events-auto" style="--delay:.65s">
+                  <div class="grid grid-cols-3 gap-6">
+                    <div class="flex flex-col">
+                      <span data-count="5" data-suffix="+" class="text-3xl sm:text-4xl font-black font-mono text-[#F4F5F7] tracking-tight tabular-nums">5+</span>
+                      <span class="text-[11px] font-mono text-[#9299A5] uppercase tracking-wider mt-0.5">Years of Experience</span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span data-count="10" data-suffix="+" class="text-3xl sm:text-4xl font-black font-mono text-[#F4F5F7] tracking-tight tabular-nums">10+</span>
+                      <span class="text-[11px] font-mono text-[#9299A5] uppercase tracking-wider mt-0.5">Capabilities</span>
+                    </div>
+                    <div class="flex flex-col">
+                      <span data-count="20" data-suffix="+" class="text-3xl sm:text-4xl font-black font-mono text-[#F4F5F7] tracking-tight tabular-nums">20+</span>
+                      <span class="text-[11px] font-mono text-[#9299A5] uppercase tracking-wider mt-0.5">Technologies</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="orbit-rise pt-2 flex flex-wrap items-center gap-4 pointer-events-auto" style="--delay:.8s">
+                  <button data-goto-world="1" class="px-6 py-4 rounded-xl bg-[#B7FF3C] hover:bg-[#a5ee2e] text-[#08090B] font-mono font-bold text-xs uppercase tracking-wider transition-all shadow-[0_0_30px_rgba(183,255,60,0.35)] hover:shadow-[0_0_45px_rgba(183,255,60,0.55)] active:scale-[0.98] flex items-center gap-3 cursor-pointer">
+                    <span>Enter The Engine</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4 stroke-[3]"></i>
+                  </button>
+                  <button data-goto-world="2" class="px-6 py-4 rounded-xl bg-[#101318]/90 hover:bg-[#1A1F29] border border-white/15 hover:border-[#36D9FF]/60 text-[#F4F5F7] font-mono text-xs uppercase tracking-wider backdrop-blur-md transition-all active:scale-[0.98] flex items-center gap-2 cursor-pointer">
+                    <span>Explore Real Projects</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Planet asal: potret + orbit + bulan -->
+              <div class="lg:col-span-5 flex flex-col items-center gap-4 order-1 lg:order-2 pointer-events-auto">
+                <div data-home class="home-system">
+                  <!-- Separuh belakang orbit (di belakang planet) -->
+                  <svg class="home-orbits is-back" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                    <ellipse cx="50" cy="50" rx="47" ry="16" pathLength="1" />
+                    <ellipse cx="50" cy="50" rx="40" ry="26" pathLength="1" class="is-cyan" />
+                  </svg>
+
+                  <div class="home-planet">
+                    <div class="home-planet-surface"></div>
+                    <img src="MUHAMMAD%20SHAFIQ%20DANIAL%20BIN%20SHARUDIN.png" alt="Portrait of Muhammad Shafiq Danial Bin Sharudin" class="home-photo" />
+                    <div class="home-planet-shade"></div>
+                  </div>
+
+                  <!-- Separuh hadapan orbit (melintas di depan planet) -->
+                  <svg class="home-orbits is-front" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                    <path d="M3 50 A47 16 0 0 0 97 50" pathLength="1" />
+                    <path d="M10 50 A40 26 0 0 0 90 50" pathLength="1" class="is-cyan" />
+                  </svg>
+
+                  <span data-moon="0" class="moon-tag"><span class="moon-dot"></span>PHP</span>
+                  <span data-moon="1" class="moon-tag"><span class="moon-dot"></span>MySQL</span>
+                  <span data-moon="2" class="moon-tag is-cyan"><span class="moon-dot"></span>JavaScript</span>
+                  <span data-moon="3" class="moon-tag is-cyan"><span class="moon-dot"></span>Linux VPS</span>
+                </div>
+
+                <div class="orbit-rise text-center" style="--delay:.9s">
+                  <div class="text-sm sm:text-base font-bold font-display text-[#F4F5F7]">Muhammad Shafiq Danial</div>
+                  <div class="mt-0.5 text-[10px] font-mono tracking-[0.25em] text-[#9299A5]">HOME PLANET · MALAYSIA · UTC+8</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== WORLD 02: THE ENGINE ========== -->
+        <div class="world" data-world-panel="1" data-enter="left" hidden>
+          <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 min-h-screen py-24 flex flex-col justify-center pointer-events-none">
+            <div class="space-y-8">
+              <div class="space-y-2">
+                <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-[#101318]/90 border border-white/10 text-xs font-mono text-[#36D9FF] backdrop-blur-md pointer-events-auto">
+                  <span class="w-2 h-2 rounded-full bg-[#36D9FF] animate-pulse"></span>
+                  <span>02 CAPABILITIES // THE ENGINE</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black font-display text-[#F4F5F7] tracking-tight">THE ENGINE</h2>
+                <p class="text-sm sm:text-base text-[#9299A5] max-w-2xl">
+                  Five capabilities orbit the core like planets. Select one to bring it to the top of its orbit and explore its moons.
+                </p>
+              </div>
+
+              <div id="engine-reactor" class="pointer-events-auto"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== WORLD 03: PROJECTS ========== -->
+        <div class="world" data-world-panel="2" data-enter="zoom" hidden>
+          <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 min-h-screen py-24 flex flex-col justify-center pointer-events-none">
+            <div class="space-y-6">
+              <div class="space-y-1 pointer-events-auto">
+                <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-[#101318]/90 border border-white/10 text-xs font-mono text-[#B7FF3C] backdrop-blur-md">
+                  <span class="w-2 h-2 rounded-full bg-[#B7FF3C] animate-pulse"></span>
+                  <span>WORLD 03 // MSD ORIGINALS</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-black font-display text-[#F4F5F7]">LIVING PROJECT WORLDS</h2>
+              </div>
+
+              <div id="project-cinema" class="pointer-events-auto"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== WORLD 04: ARCHITECTURE ========== -->
+        <div class="world" data-world-panel="3" data-enter="up" hidden>
+          <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 min-h-screen py-24 flex flex-col justify-center pointer-events-none">
+            <div class="space-y-6">
+              <div class="space-y-1 pointer-events-auto">
+                <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-[#101318]/90 border border-white/10 text-xs font-mono text-[#36D9FF] backdrop-blur-md">
+                  <span class="w-2 h-2 rounded-full bg-[#36D9FF] animate-pulse"></span>
+                  <span>04 ARCHITECTURE // FROM CODE TO PRODUCTION</span>
+                </div>
+                <h2 class="text-3xl sm:text-5xl font-black font-display text-[#F4F5F7]">FROM CODE TO PRODUCTION</h2>
+                <p class="text-sm sm:text-base text-[#9299A5] max-w-2xl">Launch one request on its journey — from a tap in the browser, across every layer, to a live response.</p>
+              </div>
+
+              <div id="mission" class="pointer-events-auto"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========== WORLD 05: CONTACT ========== -->
+        <div class="world" data-world-panel="4" data-enter="up" hidden>
+          <div id="uplink" class="uplink relative z-10 max-w-6xl mx-auto px-4 sm:px-6 min-h-screen py-24 flex flex-col justify-center pointer-events-none">
+            <div class="space-y-8">
+              <div class="space-y-3">
+                <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-[#101318]/90 border border-white/10 text-xs font-mono text-[#B7FF3C] backdrop-blur-md pointer-events-auto">
+                  <span class="w-2 h-2 rounded-full bg-[#B7FF3C] animate-pulse"></span>
+                  <span>05 CONTACT // START SOMETHING</span>
+                </div>
+                <h2 class="text-4xl sm:text-6xl font-black font-display text-[#F4F5F7] tracking-tight leading-tight">
+                  <span class="orbit-rise-line block" style="--delay:.1s">HAVE AN IDEA?</span>
+                  <span class="orbit-rise-line block text-transparent bg-clip-text bg-gradient-to-r from-[#B7FF3C] via-[#36D9FF] to-[#F4F5F7]" style="--delay:.3s">LET'S BUILD IT.</span>
+                </h2>
+              </div>
+
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center pointer-events-auto">
+                <!-- Stesen orbit: satelit saluran hubungan -->
+                <div class="lg:col-span-5 flex flex-col items-center gap-5">
+                  <div data-station class="station">
+                    <svg class="station-orbits is-back" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                      <ellipse cx="50" cy="50" rx="44" ry="15" transform="rotate(-14 50 50)" pathLength="1" />
+                      <ellipse cx="50" cy="50" rx="36" ry="22" transform="rotate(22 50 50)" pathLength="1" class="is-cyan" />
+                      <ellipse cx="50" cy="50" rx="28" ry="11" transform="rotate(-38 50 50)" pathLength="1" class="is-white" />
+                    </svg>
+
+                    <div class="station-planet">
+                      <img src="logo.png" alt="" class="w-[58%] h-auto object-contain relative z-[1]" />
+                    </div>
+
+                    <svg class="station-orbits is-front" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                      <path d="M6 50 A44 15 0 0 0 94 50" transform="rotate(-14 50 50)" pathLength="1" />
+                      <path d="M14 50 A36 22 0 0 0 86 50" transform="rotate(22 50 50)" pathLength="1" class="is-cyan" />
+                      <path d="M22 50 A28 11 0 0 0 78 50" transform="rotate(-38 50 50)" pathLength="1" class="is-white" />
+                    </svg>
+
+                    <span class="station-rocket" aria-hidden="true"><i data-lucide="rocket" class="w-5 h-5"></i></span>
+
+                    <a data-sat="0" href="mailto:shafiqopz9@gmail.com" class="satellite" aria-label="Email shafiqopz9@gmail.com">
+                      <span class="satellite-body"><i data-lucide="mail" class="w-3.5 h-3.5"></i></span>
+                      <span class="satellite-label">EMAIL</span>
+                    </a>
+                    <a data-sat="1" href="https://wa.me/60177751194?text=Hi%20MSD%2C%20I%20would%20like%20to%20discuss%20a%20web%20project%20with%20you." target="_blank" rel="noopener noreferrer" class="satellite is-cyan" aria-label="WhatsApp +60 17-775 1194">
+                      <span class="satellite-body"><i data-lucide="message-square" class="w-3.5 h-3.5"></i></span>
+                      <span class="satellite-label">WHATSAPP</span>
+                    </a>
+                    <span data-sat="2" class="satellite is-white">
+                      <span class="satellite-body"><i data-lucide="map-pin" class="w-3.5 h-3.5"></i></span>
+                      <span class="satellite-label">MALAYSIA</span>
+                    </span>
+                  </div>
+
+                  <div class="grid grid-cols-3 gap-2 w-full max-w-sm text-center font-mono">
+                    <div class="p-2.5 rounded-xl bg-[#08090B]/85 border border-white/10">
+                      <span class="block text-[9px] tracking-widest text-[#9299A5]">LOCAL TIME</span>
+                      <span data-clock class="block mt-0.5 text-sm font-bold text-[#B7FF3C] tabular-nums">--:--:--</span>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-[#08090B]/85 border border-white/10">
+                      <span class="block text-[9px] tracking-widest text-[#9299A5]">ZONE</span>
+                      <span class="block mt-0.5 text-sm font-bold text-[#F4F5F7]">UTC+8</span>
+                    </div>
+                    <div class="p-2.5 rounded-xl bg-[#08090B]/85 border border-white/10">
+                      <span class="block text-[9px] tracking-widest text-[#9299A5]">CHANNELS</span>
+                      <span class="block mt-0.5 text-sm font-bold text-[#36D9FF]">02</span>
+                    </div>
+                  </div>
+
+                  <div class="flex flex-wrap justify-center gap-2 text-xs font-mono">
+                    <a href="mailto:shafiqopz9@gmail.com" class="flex items-center gap-2 px-3 py-2 rounded-full bg-[#08090B]/85 border border-white/10 hover:border-[#B7FF3C]/60 text-[#F4F5F7] hover:text-[#B7FF3C] transition-colors">
+                      <i data-lucide="mail" class="w-3.5 h-3.5 text-[#B7FF3C]"></i><span>shafiqopz9@gmail.com</span>
+                    </a>
+                    <a href="https://wa.me/60177751194?text=Hi%20MSD%2C%20I%20would%20like%20to%20discuss%20a%20web%20project%20with%20you." target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-3 py-2 rounded-full bg-[#08090B]/85 border border-white/10 hover:border-[#36D9FF]/60 text-[#F4F5F7] hover:text-[#36D9FF] transition-colors">
+                      <i data-lucide="message-square" class="w-3.5 h-3.5 text-[#36D9FF]"></i><span>+60 17-775 1194</span>
+                    </a>
+                  </div>
+                </div>
+
+                <!-- Borang: Mission Brief -->
+                <div class="lg:col-span-7">
+                  <div id="world-contact" class="uplink-console">
+                    <div class="px-5 sm:px-6 pt-5 flex items-start justify-between gap-3">
+                      <div>
+                        <span class="text-[10px] font-mono tracking-[0.25em] text-[#B7FF3C]">MISSION BRIEF</span>
+                        <h3 class="mt-1 text-lg sm:text-xl font-bold font-display text-[#F4F5F7]">Send your project into orbit</h3>
+                      </div>
+                      <span class="uplink-mini-orbit" aria-hidden="true"><span></span></span>
+                    </div>
+
+                    <form data-contact-form class="p-5 sm:p-6 space-y-5" novalidate>
+                      <div data-error class="p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono" hidden></div>
+
+                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <label class="uplink-field">
+                          <span class="uplink-label">Your name *</span>
+                          <input name="name" type="text" required placeholder="e.g. keyde" autocomplete="name" />
+                        </label>
+                        <label class="uplink-field">
+                          <span class="uplink-label">Email address *</span>
+                          <input name="email" type="email" required placeholder="keyde@gmail.com" autocomplete="email" />
+                        </label>
+                      </div>
+
+                      <fieldset>
+                        <legend class="uplink-label mb-2">Project type</legend>
+                        <div class="flex flex-wrap gap-2">
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Custom Web Application" checked /><span>Custom Web App</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Corporate Website" /><span>Corporate Website</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="E-Commerce Platform" /><span>E-Commerce</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Event Registration System" /><span>Event Registration</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Admin Panel &amp; Dashboard" /><span>Admin Dashboard</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Payment Gateway Integration" /><span>Payment Gateway</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Database Design &amp; Management" /><span>Database Design</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Hosting &amp; Server Setup" /><span>Hosting &amp; Server</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Website Maintenance &amp; Support" /><span>Maintenance &amp; Support</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Website Optimization" /><span>Speed Optimization</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Bug Fixing &amp; Troubleshooting" /><span>Bug Fixing</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Other / Not Sure Yet" /><span>Other / Not sure</span></label>
+                        </div>
+                      </fieldset>
+
+                      <label class="uplink-field">
+                        <span class="uplink-label flex justify-between"><span>Message *</span><span class="text-[#9299A5] normal-case"><span data-char-count>0</span> characters</span></span>
+                        <textarea name="message" rows="3" required placeholder="Outline core requirements and target delivery timeline..."></textarea>
+                      </label>
+
+                      <div data-uplink class="uplink-progress" hidden>
+                        <div class="flex items-center justify-between text-[10px] font-mono tracking-widest">
+                          <span class="text-[#B7FF3C] flex items-center gap-1.5"><i data-lucide="rocket" class="w-3 h-3"></i><span data-uplink-stage>PREPARING</span></span>
+                          <span class="flex gap-1.5">
+                            <span data-stage-dot class="uplink-stage-dot"></span>
+                            <span data-stage-dot class="uplink-stage-dot"></span>
+                            <span data-stage-dot class="uplink-stage-dot"></span>
+                            <span data-stage-dot class="uplink-stage-dot"></span>
+                          </span>
+                        </div>
+                        <div class="mt-2 h-1 rounded-full bg-white/10 overflow-hidden"><div data-uplink-bar class="uplink-bar"></div></div>
+                      </div>
+
+                      <button type="submit" class="uplink-send">
+                        <i data-lucide="rocket" class="w-4 h-4"></i>
+                        <span>Launch Message</span>
+                      </button>
+                    </form>
+
+                    <div data-success class="p-6 sm:p-8 space-y-5 text-center fade-in" hidden>
+                      <div class="uplink-delivered mx-auto">
+                        <i data-lucide="orbit" class="w-7 h-7"></i>
+                      </div>
+                      <div>
+                        <span class="text-[10px] font-mono tracking-widest text-[#B7FF3C]">MESSAGE IN ORBIT</span>
+                        <h4 class="mt-1 text-xl font-bold font-display text-[#F4F5F7]">Ready for delivery, <span data-out-name class="text-[#B7FF3C]"></span></h4>
+                        <p class="text-xs text-[#9299A5] mt-1">Your <span data-out-type class="text-[#36D9FF]"></span> brief is ready. Choose a channel to send it to MSD:</p>
+                      </div>
+                      <div class="flex flex-col sm:flex-row items-center justify-center gap-2.5">
+                        <a data-mailto class="w-full sm:w-auto px-5 py-3 rounded-xl bg-[#B7FF3C] hover:bg-[#a5ee2e] text-[#08090B] font-mono font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2">
+                          <i data-lucide="mail" class="w-4 h-4"></i><span>Send via Email</span>
+                        </a>
+                        <a data-whatsapp target="_blank" rel="noopener noreferrer" class="w-full sm:w-auto px-5 py-3 rounded-xl bg-[#171B22] hover:bg-[#202632] border border-white/10 text-[#36D9FF] font-mono font-bold text-xs uppercase tracking-wider transition-colors flex items-center justify-center gap-2">
+                          <i data-lucide="message-square" class="w-4 h-4"></i><span>Send via WhatsApp</span>
+                        </a>
+                      </div>
+                      <button data-reset type="button" class="text-xs font-mono text-[#9299A5] hover:text-white underline">← Write another message</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================================================== -->
+      <!-- MOD 2D (ACCESSIBLE ARCHIVE MODE)                     -->
+      <!-- ==================================================== -->
+      <div id="mode-2d" class="relative z-10 bg-[#06070a]" hidden>
+        <!-- Latar bintang (tetap) -->
+        <div class="h2d-sky" aria-hidden="true">
+          <div class="sky-stars"></div>
+          <div class="sky-stars is-far"></div>
+          <div class="sky-orbit"><div class="sky-moon"><span class="sky-moon-craters"></span></div></div>
+          <div class="sky-earth"></div>
+        </div>
+
+        <!-- Navigasi: pil kaca terapung -->
+        <div class="fixed top-0 inset-x-0 z-50 px-3 sm:px-6 pt-3">
+          <header id="site-nav" class="h2d-nav mx-auto max-w-6xl">
+            <a href="#" class="flex items-center gap-2 group shrink-0" aria-label="MSD — back to top">
+              <img src="logo.png" alt="MSD logo" class="h-9 w-auto transition-transform duration-200 group-hover:scale-105" />
+              <span class="text-lg font-bold tracking-tight text-[#F4F5F7] font-display">MSD</span>
+            </a>
+
+            <nav id="nav2d-links" class="h2d-links hidden lg:flex" aria-label="Sections">
+              <span class="h2d-indicator" aria-hidden="true"></span>
+              <a href="#about">About</a>
+              <a href="#engine">Engine</a>
+              <a href="#capabilities">Capabilities</a>
+              <a href="#projects">Projects</a>
+              <a href="#architecture">Architecture</a>
+              <a href="#workflow">Workflow</a>
+              <a href="#services">Services</a>
+            </nav>
+
+            <div class="flex items-center gap-2 shrink-0">
+              <button data-action="contact" class="h2d-pill-solid hidden sm:inline-flex">
+                <span>Let's Talk</span>
+                <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 stroke-[2.5]"></i>
+              </button>
+              <button id="mobile-menu-toggle" class="lg:hidden p-2 rounded-full text-[#F4F5F7] hover:text-[#B7FF3C] hover:bg-white/5 transition-colors" aria-label="Toggle Navigation Menu" aria-expanded="false">
+                <span data-icon-open><i data-lucide="menu" class="w-5 h-5"></i></span>
+                <span data-icon-close hidden><i data-lucide="x" class="w-5 h-5"></i></span>
+              </button>
+            </div>
+          </header>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobile-menu" class="fixed inset-0 z-40 lg:hidden bg-[#06070a]/95 backdrop-blur-xl pt-28 px-6 pb-8 flex flex-col justify-between fade-in" hidden>
+          <div class="flex flex-col space-y-1">
+            <span class="text-xs font-mono text-[#9299A5] uppercase tracking-widest pb-3 mb-2 border-b border-white/10">Explore</span>
+            <a href="#about" data-close-menu class="h2d-drawer-link"><span>01</span>About</a>
+            <a href="#engine" data-close-menu class="h2d-drawer-link"><span>02</span>Engine</a>
+            <a href="#capabilities" data-close-menu class="h2d-drawer-link"><span>03</span>Capabilities</a>
+            <a href="#projects" data-close-menu class="h2d-drawer-link"><span>04</span>Projects</a>
+            <a href="#architecture" data-close-menu class="h2d-drawer-link"><span>05</span>Architecture</a>
+            <a href="#workflow" data-close-menu class="h2d-drawer-link"><span>06</span>Workflow</a>
+            <a href="#services" data-close-menu class="h2d-drawer-link"><span>07</span>Services</a>
+          </div>
+          <div class="space-y-4 pt-6 border-t border-white/10">
+            <button data-action="contact" data-close-menu class="w-full py-3.5 text-sm font-semibold uppercase tracking-wider text-[#08090B] bg-[#B7FF3C] rounded-full text-center flex items-center justify-center gap-2">
+              <span>Let's Work Together</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </button>
+            <div class="flex items-center justify-between text-xs text-[#9299A5] font-mono">
+              <span>Malaysia</span>
+              <span>UTC+8 (MYT)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Butang kembali ke atas: gelang orbit menunjukkan kemajuan bacaan -->
+        <button id="orbit-progress" class="h2d-progress" aria-label="Back to top">
+          <svg viewBox="0 0 48 48" class="h2d-progress-ring" aria-hidden="true">
+            <circle cx="24" cy="24" r="21" class="h2d-progress-track" />
+            <circle cx="24" cy="24" r="21" class="h2d-progress-fill" pathLength="100" />
+          </svg>
+          <i data-lucide="arrow-up" class="w-4 h-4"></i>
+        </button>
+
+        <main class="relative z-[1]">
+          <!-- ========== HERO ========== -->
+          <section class="h2d-hero relative min-h-screen pt-32 pb-20 flex items-center overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                <div class="lg:col-span-6 xl:col-span-7 space-y-7 h2d-hero-copy">
+                  <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.04] border border-white/10 text-xs">
+                    <span class="relative flex w-2 h-2"><span class="absolute inset-0 rounded-full bg-[#B7FF3C] animate-ping opacity-60"></span><span class="relative w-2 h-2 rounded-full bg-[#B7FF3C]"></span></span>
+                    <span class="text-[#F4F5F7] font-medium">Available for new projects</span>
+                    <span class="text-white/25">·</span>
+                    <span class="text-[#9299A5]">Malaysia</span>
+                  </div>
+
+                  <h1 class="text-[2.6rem] leading-[1.02] sm:text-6xl xl:text-7xl font-bold tracking-tight text-[#F4F5F7] font-display text-balance">
+                    I build digital
+                    <span class="h2d-serif">solutions</span>
+                    from <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#B7FF3C] via-[#7fe7c8] to-[#36D9FF]">code to production.</span>
+                  </h1>
+
+                  <p class="text-base sm:text-lg text-[#a3a9b4] max-w-xl leading-relaxed">
+                    I'm <strong class="text-[#F4F5F7] font-semibold">Muhammad Shafiq Danial</strong> — a Full Stack Developer specializing in PHP, web applications, database architecture, and deployment.
+                  </p>
+
+                  <div class="flex flex-wrap items-center gap-3">
+                    <a href="#projects" class="h2d-pill-solid is-lg">
+                      <span>Explore My Projects</span>
+                      <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+                    </a>
+                    <button data-action="contact" class="h2d-pill-ghost is-lg">
+                      <span>Let's Work Together</span>
+                    </button>
+                  </div>
+
+                  <ul class="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[#9299A5]" aria-label="Core stack">
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#B7FF3C]"></span>PHP &amp; MySQL</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#36D9FF]"></span>JavaScript</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#A78BFA]"></span>Linux &amp; VPS</li>
+                    <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-[#FFB547]"></span>WordPress</li>
+                  </ul>
+                </div>
+
+                <!-- Sistem suria teknologi: logo di tengah, teknologi mengorbit -->
+                <div class="lg:col-span-6 xl:col-span-5 flex flex-col items-center gap-6">
+                  <div class="tss">
+                    <div class="tss-glow" aria-hidden="true"></div>
+                      <ul class="tss-ring tss-ring-2" aria-hidden="true">
+                        <li class="tss-badge" style="--a:0deg; --c:#B7FF3C"><span><i></i>Linux</span></li>
+                        <li class="tss-badge" style="--a:90deg; --c:#5EEAD4"><span><i></i>WordPress</span></li>
+                        <li class="tss-badge" style="--a:180deg; --c:#FF7A59"><span><i></i>Git</span></li>
+                        <li class="tss-badge" style="--a:270deg; --c:#FFB547"><span><i></i>cPanel</span></li>
+                      </ul>
+                      <ul class="tss-ring tss-ring-1" aria-hidden="true">
+                        <li class="tss-badge" style="--a:70deg; --c:#FFB547"><span><i></i>JavaScript</span></li>
+                        <li class="tss-badge" style="--a:190deg; --c:#FF7A59"><span><i></i>HTML5</span></li>
+                        <li class="tss-badge" style="--a:310deg; --c:#36D9FF"><span><i></i>CSS3</span></li>
+                      </ul>
+                      <ul class="tss-ring tss-ring-0" aria-hidden="true">
+                        <li class="tss-badge" style="--a:20deg; --c:#A78BFA"><span><i></i>PHP</span></li>
+                        <li class="tss-badge" style="--a:200deg; --c:#36D9FF"><span><i></i>MySQL</span></li>
+                      </ul>
+                    <button type="button" data-action="portal-3d" class="tss-sun" aria-label="Enter the 3D orbit experience">
+                      <span class="tss-pulse" aria-hidden="true"></span>
+                      <span class="tss-pulse" style="animation-delay:1.3s" aria-hidden="true"></span>
+                      <img src="logo.png" alt="" />
+                      <span class="tss-sun-label" aria-hidden="true"><i data-lucide="orbit" class="w-3.5 h-3.5"></i>Enter orbit · 3D</span>
+                    </button>
+                  </div>
+
+                  <dl class="tss-stats">
+                    <div style="--c:#B7FF3C"><dt>Years of experience</dt><dd>5+</dd></div>
+                    <div style="--c:#36D9FF"><dt>Capabilities</dt><dd>10+</dd></div>
+                    <div style="--c:#A78BFA"><dt>Technologies</dt><dd>20+</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+
+            <a href="#about" class="h2d-scroll-cue hidden sm:flex" aria-label="Scroll to The Developer Behind The System">
+              <span class="h2d-scroll-mouse"></span>
+              <span>Scroll to explore</span>
+            </a>
+          </section>
+
+          <!-- ========== 07 · ABOUT ========== -->
+          <section id="about" data-num="01" class="h2d-section h2d-reveal py-24 md:py-32 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <header class="h2d-head">
+                <div class="h2d-eyebrow"><span class="w-1.5 h-1.5 rounded-full bg-current"></span><span>01 · The architect</span></div>
+                <h2 class="h2d-title">The developer behind <em>the system</em></h2>
+                <p class="h2d-lead">Full-stack engineering discipline grounded in practical execution and real-world system delivery.</p>
+              </header>
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
+                <div class="lg:col-span-5 flex justify-center lg:sticky lg:top-28">
+                  <div data-about-system class="ab2d-system">
+                    <svg class="h2d-orbits is-back" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                      <ellipse cx="50" cy="50" rx="49" ry="14" transform="rotate(-10 50 50)" />
+                      <ellipse cx="50" cy="50" rx="42" ry="24" transform="rotate(16 50 50)" class="is-cyan" />
+                    </svg>
+                    <div class="ab2d-planet">
+                      <img src="MUHAMMAD%20SHAFIQ%20DANIAL%20BIN%20SHARUDIN.png" alt="Portrait of Muhammad Shafiq Danial Bin Sharudin" loading="lazy" />
+                    </div>
+                    <svg class="h2d-orbits is-front" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                      <path d="M1 50 A49 14 0 0 0 99 50" transform="rotate(-10 50 50)" />
+                      <path d="M8 50 A42 24 0 0 0 92 50" transform="rotate(16 50 50)" class="is-cyan" />
+                    </svg>
+                    <span data-amoon="0" class="h2d-moon"><strong>5+</strong><span>Years</span></span>
+                    <span data-amoon="1" class="h2d-moon is-cyan"><strong>MY</strong><span>Malaysia</span></span>
+                    <span data-amoon="2" class="h2d-moon is-violet"><strong>+8</strong><span>UTC</span></span>
+                  </div>
+                </div>
+
+                <div class="lg:col-span-7 space-y-7">
+                  <div>
+                    <span class="text-xs font-mono tracking-[0.2em] uppercase text-[#36D9FF]">Full Stack Developer · PHP &amp; Web Solutions Specialist</span>
+                    <h3 class="mt-2 text-2xl sm:text-3xl font-bold font-display text-[#F4F5F7] tracking-tight">Muhammad Shafiq Danial Bin Sharudin</h3>
+                  </div>
+                  <blockquote class="ab2d-quote">“I build digital solutions from code to production.”</blockquote>
+                  <p class="text-base text-[#a3a9b4] leading-relaxed">
+                    Full Stack Developer with experience designing, building, and launching web applications from concept to production. Skilled in frontend and backend development, database management, server deployment, and hosting configuration.
+                  </p>
+                  <div>
+                    <span class="block mb-3 text-xs font-mono tracking-[0.2em] uppercase text-[#9299A5]">Engineering foundations</span>
+                    <ol id="about-pillars" class="ab2d-pillars"></ol>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- ========== 01 · INSIDE THE MSD ENGINE ========== -->
+          <section id="engine" data-num="02" class="h2d-section h2d-reveal py-24 md:py-32 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <header class="h2d-head">
+                <div class="h2d-eyebrow"><span class="w-1.5 h-1.5 rounded-full bg-current"></span><span>02 · Technical ecosystem</span></div>
+                <h2 class="h2d-title">Inside the MSD <em>engine</em></h2>
+                <p class="h2d-lead">Every interface, database, and deployment is part of a connected system. Select a planet to explore its orbit.</p>
+              </header>
+              <div id="engine-orbit" class="eng2d"></div>
+            </div>
+          </section>
+
+          <!-- ========== 02 · TECHNICAL CAPABILITIES ========== -->
+          <section id="capabilities" data-num="03" class="h2d-section h2d-reveal py-24 md:py-32 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <header class="h2d-head">
+                <div class="h2d-eyebrow is-cyan"><span class="w-1.5 h-1.5 rounded-full bg-current"></span><span>03 · System proficiency</span></div>
+                <h2 class="h2d-title">Technical <em>capabilities</em></h2>
+                <p class="h2d-lead">Engineering proficiency across frontend, backend logic, relational databases, and server deployment.</p>
+              </header>
+              <div id="skills-orbit" class="sk2d"></div>
+            </div>
+          </section>
+
+          <!-- ========== 03 · PROJECT THEATRE ========== -->
+          <section id="projects" data-num="04" class="h2d-section h2d-reveal py-24 md:py-32 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <header class="h2d-head">
+                <div class="h2d-eyebrow"><span class="w-1.5 h-1.5 rounded-full bg-current"></span><span>04 · Mission archive</span></div>
+                <h2 class="h2d-title">Project <em>theatre</em></h2>
+                <p class="h2d-lead">Projects I've built — real work from concept to production. Every episode is a live recording of the system in action.</p>
+              </header>
+              <ol id="projects-timeline" class="pj2d"></ol>
+            </div>
+          </section>
+
+          <!-- ========== 04 · FROM CODE TO PRODUCTION ========== -->
+          <section id="architecture" data-num="05" class="h2d-section h2d-reveal py-24 md:py-32 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <header class="h2d-head">
+                <div class="h2d-eyebrow is-cyan"><span class="w-1.5 h-1.5 rounded-full bg-current"></span><span>05 · Signature feature</span></div>
+                <h2 class="h2d-title">From code to <em>production</em></h2>
+                <p class="h2d-lead">Launch one request from the browser and watch it climb through every layer — frontend, PHP runtime, MySQL, the Linux server — until it reaches orbit.</p>
+              </header>
+              <div id="altitude" class="alt2d"></div>
+            </div>
+          </section>
+
+          <!-- ========== 05 · WORKFLOW ========== -->
+          <section id="workflow" data-num="06" class="h2d-section h2d-reveal py-24 md:py-32 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <header class="h2d-head">
+                <div class="h2d-eyebrow"><span class="w-1.5 h-1.5 rounded-full bg-current"></span><span>06 · Methodology</span></div>
+                <h2 class="h2d-title">How I build digital <em>solutions</em></h2>
+                <p class="h2d-lead">A disciplined five-phase lifecycle — from a new idea to a fully realised production system, like the phases of the moon.</p>
+              </header>
+              <div id="phases" class="ph2d"></div>
+            </div>
+          </section>
+
+          <!-- ========== 06 · SERVICES ========== -->
+          <section id="services" data-num="07" class="h2d-section h2d-reveal py-24 md:py-32 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <header class="h2d-head">
+                <div class="h2d-eyebrow is-cyan"><span class="w-1.5 h-1.5 rounded-full bg-current"></span><span>07 · Core capabilities</span></div>
+                <h2 class="h2d-title">What I can build <em>for you</em></h2>
+                <p class="h2d-lead">Ten web engineering services covering full-stack custom applications, database architecture, payment integrations, and server infrastructure.</p>
+              </header>
+              <div id="services-galaxy" class="sv2d"></div>
+            </div>
+          </section>
+
+          <!-- ========== 08 · CONTACT ========== -->
+          <section id="contact" data-num="08" class="h2d-section h2d-reveal py-24 md:py-32 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <header class="h2d-head">
+                <div class="h2d-eyebrow"><span class="w-1.5 h-1.5 rounded-full bg-current"></span><span>08 · Initialize collaboration</span></div>
+                <h2 class="h2d-title">Have an idea? <em>Let’s build it.</em></h2>
+                <p class="h2d-lead">Looking for a developer to bring your next web project to life? Let's discuss your ideas and turn them into functional digital solutions.</p>
+              </header>
+              <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+                <div class="lg:col-span-5 space-y-4">
+                  <a href="mailto:shafiqopz9@gmail.com" class="ct2d-channel" style="--p:#B7FF3C">
+                    <span class="ct2d-orbit"><i data-lucide="mail" class="w-5 h-5"></i></span>
+                    <span class="min-w-0">
+                      <small>Email</small>
+                      <strong>shafiqopz9@gmail.com</strong>
+                      <em>Direct inbox delivery</em>
+                    </span>
+                    <i data-lucide="arrow-up-right" class="ct2d-arrow w-5 h-5"></i>
+                  </a>
+                  <a href="https://wa.me/60177751194?text=Hi%20MSD%2C%20I%20would%20like%20to%20discuss%20a%20web%20project%20with%20you." target="_blank" rel="noopener noreferrer" class="ct2d-channel" style="--p:#36D9FF">
+                    <span class="ct2d-orbit"><i data-lucide="message-square" class="w-5 h-5"></i></span>
+                    <span class="min-w-0">
+                      <small>WhatsApp</small>
+                      <strong>+60 17-775 1194</strong>
+                      <em>Fastest response</em>
+                    </span>
+                    <i data-lucide="arrow-up-right" class="ct2d-arrow w-5 h-5"></i>
+                  </a>
+                  <div class="grid grid-cols-2 gap-3">
+                    <div class="ct2d-stat"><small>Local time</small><strong data-ct-clock>--:--</strong><em>Malaysia · UTC+8</em></div>
+                    <div class="ct2d-stat"><small>Status</small><strong class="flex items-center gap-2"><span class="relative flex w-2 h-2"><span class="absolute inset-0 rounded-full bg-[#B7FF3C] animate-ping opacity-60"></span><span class="relative w-2 h-2 rounded-full bg-[#B7FF3C]"></span></span>Open</strong><em>New projects welcome</em></div>
+                  </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                  <div id="site-contact" class="ct2d-card">
+                    <form data-contact-form class="space-y-5" novalidate>
+                      <div class="flex items-start justify-between gap-3">
+                        <div>
+                          <span class="text-[10px] font-mono tracking-[0.25em] text-[#B7FF3C]">MISSION BRIEF</span>
+                          <h3 class="mt-1 text-xl font-bold font-display text-[#F4F5F7]">Send a message</h3>
+                        </div>
+                        <span class="uplink-mini-orbit" aria-hidden="true"><span></span></span>
+                      </div>
+
+                      <div data-error class="p-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-mono" hidden></div>
+
+                      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <label class="uplink-field">
+                          <span class="uplink-label">Your full name *</span>
+                          <input name="name" type="text" required placeholder="e.g. shafiq danial" autocomplete="name" />
+                        </label>
+                        <label class="uplink-field">
+                          <span class="uplink-label">Email address *</span>
+                          <input name="email" type="email" required placeholder="keyde@example.com" autocomplete="email" />
+                        </label>
+                      </div>
+
+                      <fieldset>
+                        <legend class="uplink-label mb-2">Project type</legend>
+                        <div class="flex flex-wrap gap-2">
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Custom Web Application" checked /><span>Custom Web App</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Corporate Website" /><span>Corporate Website</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="E-Commerce Platform" /><span>E-Commerce</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Event Registration System" /><span>Event Registration</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Admin Panel &amp; Dashboard" /><span>Admin Dashboard</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Payment Gateway Integration" /><span>Payment Gateway</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Database Design &amp; Management" /><span>Database Design</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Hosting &amp; Server Setup" /><span>Hosting &amp; Server</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Website Maintenance &amp; Support" /><span>Maintenance &amp; Support</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Website Optimization" /><span>Speed Optimization</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Bug Fixing &amp; Troubleshooting" /><span>Bug Fixing</span></label>
+                          <label class="uplink-chip"><input type="radio" name="projectType" value="Other / Not Sure Yet" /><span>Other / Not sure</span></label>
+                        </div>
+                      </fieldset>
+
+                      <label class="uplink-field">
+                        <span class="uplink-label flex justify-between"><span>Project objectives &amp; requirements *</span><span><span data-ct-count>0</span> characters</span></span>
+                        <textarea name="message" rows="4" required placeholder="Outline your timeline, core requirements, and target features..."></textarea>
+                      </label>
+
+                      <button type="submit" class="uplink-send ct2d-send">
+                        <span class="ct2d-rocket"><i data-lucide="rocket" class="w-4 h-4"></i></span>
+                        <span>Launch Message</span>
+                      </button>
+                      <p class="text-[11px] text-[#9299A5] text-center">Your brief is formatted for email or WhatsApp — nothing is sent until you choose a channel.</p>
+                    </form>
+
+                    <div data-success class="py-6 space-y-5 text-center fade-in" hidden>
+                      <div class="uplink-delivered mx-auto"><i data-lucide="orbit" class="w-7 h-7"></i></div>
+                      <div class="space-y-2 max-w-md mx-auto">
+                        <span class="text-[10px] font-mono tracking-widest text-[#B7FF3C]">MESSAGE IN ORBIT</span>
+                        <h4 class="text-xl font-bold font-display text-[#F4F5F7]">Thank you, <span data-out-name class="text-[#B7FF3C]"></span></h4>
+                        <p class="text-sm text-[#9299A5] leading-relaxed">Your brief about <span data-out-type class="text-[#36D9FF] font-semibold"></span> is ready. Choose a channel to send it to MSD:</p>
+                      </div>
+                      <div class="flex flex-col sm:flex-row items-center justify-center gap-3">
+                        <a data-mailto class="h2d-pill-solid is-lg w-full sm:w-auto justify-center"><i data-lucide="mail" class="w-4 h-4"></i><span>Send via Email</span></a>
+                        <a data-whatsapp target="_blank" rel="noopener noreferrer" class="h2d-pill-ghost is-lg w-full sm:w-auto justify-center"><i data-lucide="message-square" class="w-4 h-4"></i><span>Send via WhatsApp</span></a>
+                      </div>
+                      <button data-reset type="button" class="text-xs font-mono text-[#9299A5] hover:text-white underline">← Write another message</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="h2d-footer relative z-[1] py-12 sm:py-16 text-[#9299A5] font-mono text-xs">
+          <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-8 pb-10 border-b border-white/5">
+              <div class="space-y-2">
+                <div class="flex items-center gap-2.5">
+                  <img src="logo.png" alt="MSD logo" loading="lazy" class="h-10 w-auto" />
+                  <span class="text-xl font-bold font-display text-[#F4F5F7]">MSD</span>
+                  <span class="text-white/20">|</span>
+                  <span class="text-[#36D9FF] text-xs">DIGITAL ARCHITECT</span>
+                </div>
+                <p class="text-xs text-[#9299A5] max-w-md">MSD — FROM CONCEPT TO CODE. FROM CODE TO PRODUCTION.</p>
+              </div>
+
+              <div class="flex flex-wrap items-center gap-6 text-xs">
+                <a href="#about" class="hover:text-[#F4F5F7] transition-colors">About</a>
+                <a href="#engine" class="hover:text-[#F4F5F7] transition-colors">Engine</a>
+                <a href="#capabilities" class="hover:text-[#F4F5F7] transition-colors">Capabilities</a>
+                <a href="#projects" class="hover:text-[#F4F5F7] transition-colors">Projects</a>
+                <a href="#architecture" class="hover:text-[#F4F5F7] transition-colors">Architecture</a>
+                <a href="#workflow" class="hover:text-[#F4F5F7] transition-colors">Workflow</a>
+                <a href="#services" class="hover:text-[#F4F5F7] transition-colors">Services</a>
+                <a href="#contact" class="hover:text-[#F4F5F7] transition-colors">Contact</a>
+              </div>
+
+              <button id="back-to-top" class="p-3 rounded-xl bg-[#101318] border border-white/10 hover:border-[#B7FF3C] text-[#F4F5F7] hover:text-[#B7FF3C] transition-colors cursor-pointer self-start md:self-auto" aria-label="Back to top">
+                <i data-lucide="arrow-up" class="w-4 h-4"></i>
+              </button>
+            </div>
+
+            <div class="pt-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[11px] text-[#9299A5]/70">
+              <div>© <span id="footer-year"></span> Muhammad Shafiq Danial Bin Sharudin. All rights reserved.</div>
+              <div class="flex items-center gap-4">
+                <span>Malaysia · UTC+8 (MYT)</span>
+                <span class="text-white/10">|</span>
+                <span>PHP &amp; Full Stack Web Specialist</span>
+              </div>
+            </div>
+          </div>
+        </footer>
+      </div>
+
+      <!-- ==================================================== -->
+      <!-- MODAL: Case study projek                             -->
+      <!-- ==================================================== -->
+      <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-8 bg-black/85 backdrop-blur-xl fade-in overflow-y-auto" hidden>
+        <div class="relative w-full max-w-4xl bg-[#101318] border border-white/15 rounded-2xl shadow-2xl overflow-hidden my-auto max-h-[90vh] flex flex-col">
+          <div class="flex items-center justify-between p-6 border-b border-white/10 bg-[#0C0E12] sticky top-0 z-20">
+            <div class="flex items-center gap-3">
+              <span data-field="episode" class="px-2.5 py-1 rounded bg-[#B7FF3C]/10 border border-[#B7FF3C]/30 text-[#B7FF3C] font-mono text-xs font-bold"></span>
+              <div>
+                <h3 data-field="title" class="text-xl sm:text-2xl font-bold font-display text-[#F4F5F7]"></h3>
+                <p data-field="meta" class="text-xs text-[#9299A5] font-mono"></p>
+              </div>
+            </div>
+            <button data-close-modal class="p-2 rounded-lg text-[#9299A5] hover:text-white hover:bg-white/10 transition-colors" aria-label="Close Case Study">
+              <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+          </div>
+
+          <div class="p-6 sm:p-8 space-y-8 overflow-y-auto">
+            <div class="relative rounded-xl overflow-hidden border border-white/10 aspect-video max-h-[380px] bg-[#08090B]">
+              <div data-field="media" class="w-full h-full"></div>
+              <div data-field="media-overlay" class="absolute inset-0 bg-gradient-to-t from-[#101318] via-transparent to-transparent opacity-80 pointer-events-none"></div>
+              <div data-field="media-labels" class="absolute bottom-4 left-4 right-4 flex items-center justify-between pointer-events-none">
+                <span class="text-xs font-mono px-3 py-1 rounded bg-[#08090B]/80 backdrop-blur-md text-[#36D9FF] border border-white/10">PRODUCTION SYSTEM ARCHITECTURE</span>
+                <span class="text-xs font-mono text-white/70">MALAYSIA DEPLOYMENT</span>
+              </div>
+            </div>
+
+            <div>
+              <h4 class="text-sm font-mono uppercase tracking-wider text-[#B7FF3C] mb-2">System Overview &amp; Problem Space</h4>
+              <p data-field="overview" class="text-sm sm:text-base text-[#F4F5F7] leading-relaxed"></p>
+            </div>
+
+            <div class="space-y-3">
+              <h4 class="text-sm font-mono uppercase tracking-wider text-[#36D9FF] mb-2">Layered Engineering Architecture</h4>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div class="p-4 rounded-xl bg-[#08090B] border border-white/5 space-y-1">
+                  <div class="flex items-center gap-2 text-xs font-mono text-[#F4F5F7]">
+                    <i data-lucide="layers" class="w-3.5 h-3.5 text-[#B7FF3C]"></i><span class="font-semibold">Frontend Layer</span>
+                  </div>
+                  <p data-field="frontend" class="text-xs text-[#9299A5]"></p>
+                </div>
+                <div class="p-4 rounded-xl bg-[#08090B] border border-white/5 space-y-1">
+                  <div class="flex items-center gap-2 text-xs font-mono text-[#F4F5F7]">
+                    <i data-lucide="code" class="w-3.5 h-3.5 text-[#36D9FF]"></i><span class="font-semibold">Backend Logic</span>
+                  </div>
+                  <p data-field="backend" class="text-xs text-[#9299A5]"></p>
+                </div>
+                <div class="p-4 rounded-xl bg-[#08090B] border border-white/5 space-y-1">
+                  <div class="flex items-center gap-2 text-xs font-mono text-[#F4F5F7]">
+                    <i data-lucide="database" class="w-3.5 h-3.5 text-[#B7FF3C]"></i><span class="font-semibold">MySQL Relational DB</span>
+                  </div>
+                  <p data-field="database" class="text-xs text-[#9299A5]"></p>
+                </div>
+                <div class="p-4 rounded-xl bg-[#08090B] border border-white/5 space-y-1">
+                  <div class="flex items-center gap-2 text-xs font-mono text-[#F4F5F7]">
+                    <i data-lucide="server" class="w-3.5 h-3.5 text-[#36D9FF]"></i><span class="font-semibold">Server &amp; Hosting</span>
+                  </div>
+                  <p data-field="deployment" class="text-xs text-[#9299A5]"></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="space-y-3">
+              <h4 class="text-sm font-mono uppercase tracking-wider text-[#9299A5] mb-2">Engineering Deliverables</h4>
+              <div data-field="highlights" class="space-y-2"></div>
+            </div>
+          </div>
+
+          <div class="p-4 sm:p-6 border-t border-white/10 bg-[#0C0E12] flex items-center justify-between">
+            <span class="text-xs font-mono text-[#9299A5]">MSD CASE STUDY ARCHIVE · 2026</span>
+            <button data-close-modal class="px-5 py-2 rounded-lg bg-white/10 hover:bg-white/15 text-xs font-mono text-[#F4F5F7] transition-colors cursor-pointer">Close Inspector</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================================================== -->
+      <!-- MODAL: Butiran servis                                -->
+      <!-- ==================================================== -->
+      <div id="service-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/85 backdrop-blur-md fade-in" hidden>
+        <div class="w-full max-w-xl bg-[#101318] border border-white/15 rounded-2xl shadow-2xl p-6 sm:p-8 space-y-6 relative">
+          <div class="flex items-start justify-between">
+            <div class="flex items-center gap-3">
+              <div data-field="icon" class="p-3 rounded-xl bg-[#08090B] border border-white/10"></div>
+              <div>
+                <span data-field="meta" class="text-xs font-mono text-[#B7FF3C] uppercase tracking-wider"></span>
+                <h3 data-field="title" class="text-xl sm:text-2xl font-bold font-display text-[#F4F5F7]"></h3>
+              </div>
+            </div>
+            <button data-close-modal class="p-1.5 rounded-lg text-[#9299A5] hover:text-white hover:bg-white/10" aria-label="Close">
+              <i data-lucide="x" class="w-5 h-5"></i>
+            </button>
+          </div>
+
+          <p data-field="desc" class="text-sm text-[#F4F5F7] leading-relaxed"></p>
+
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-[#9299A5] block mb-2.5">Key Deliverables &amp; Scope</span>
+            <div data-field="deliverables" class="space-y-2"></div>
+          </div>
+
+          <div>
+            <span class="text-xs font-mono uppercase tracking-wider text-[#9299A5] block mb-2">Technologies Employed</span>
+            <div data-field="tech" class="flex flex-wrap gap-2"></div>
+          </div>
+
+          <div class="pt-4 border-t border-white/10 flex items-center justify-between gap-4">
+            <button data-close-modal class="px-4 py-2 rounded-lg bg-white/5 hover:bg-white/10 text-xs font-mono text-[#9299A5] transition-colors">Close</button>
+            <button data-action="contact" data-close-modal class="px-5 py-2.5 rounded-lg bg-[#B7FF3C] hover:bg-[#a5ee2e] text-[#08090B] font-mono font-bold text-xs uppercase tracking-wider transition-colors flex items-center gap-2">
+              <span>Inquire About This Service</span>
+              <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================================================== -->
+      <!-- TUTORIAL (lawatan berpandu)                          -->
+      <!-- ==================================================== -->
+      <div id="tutorial" class="gt" role="dialog" aria-modal="false" aria-labelledby="tutorial-title" hidden>
+        <div class="gt-dim" aria-hidden="true"></div>
+        <div data-gt-spot class="gt-spot" aria-hidden="true" hidden></div>
+        <div data-gt-card class="gt-card" aria-live="polite"></div>
+      </div>
+
+      <!-- Transisi 2D → 3D: masuk ke matahari, roket dilancarkan ke orbit -->
+      <div id="portal" class="portal" aria-hidden="true" hidden>
+        <div class="pl-stars"></div>
+        <div class="pl-horizon"></div>
+        <div class="pl-smoke"><span></span><span></span><span></span><span></span></div>
+        <div class="pl-rocket">
+          <span class="pl-flame"></span>
+          <svg viewBox="0 0 60 120" class="pl-rocket-svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="pl-body" x1="0" x2="1">
+                <stop offset="0" stop-color="#cfd6de" />
+                <stop offset="0.5" stop-color="#ffffff" />
+                <stop offset="1" stop-color="#9aa3ad" />
+              </linearGradient>
+            </defs>
+            <path d="M30 4 C44 20 46 44 44 78 L16 78 C14 44 16 20 30 4 Z" fill="url(#pl-body)" />
+            <path d="M30 4 C37 12 41 22 42.5 32 L17.5 32 C19 22 23 12 30 4 Z" fill="#B7FF3C" />
+            <circle cx="30" cy="48" r="7" fill="#0b1a2a" stroke="#36D9FF" stroke-width="2.5" />
+            <path d="M16 62 L4 84 L4 94 L17 82 Z" fill="#B7FF3C" />
+            <path d="M44 62 L56 84 L56 94 L43 82 Z" fill="#B7FF3C" />
+            <path d="M22 78 L38 78 L35 88 L25 88 Z" fill="#4b5563" />
+            <text x="30" y="72" text-anchor="middle" font-family="Space Grotesk, sans-serif" font-size="7" font-weight="800" fill="#0b1a2a">MSD</text>
+          </svg>
+        </div>
+        <div class="pl-flash"></div>
+      </div>
+    </div>
+
+    <!-- Skrip (tertib penting: data dahulu, kemudian komponen, kemudian app) -->
+    <script src="data.js"></script>
+    <script src="helpers.js"></script>
+    <script src="components.js"></script>
+    <script src="sections2d.js"></script>
+    <script src="engine.js"></script>
+    <script src="identity.js"></script>
+    <script src="cinema.js"></script>
+    <script src="trajectory.js"></script>
+    <script src="uplink.js"></script>
+    <script src="tutorial.js"></script>
+    <script src="scenes.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
