@@ -300,6 +300,8 @@ function orbitSafeArea() {
   const footer = $('#hud-location').closest('footer');
   const rail = $('#orbit-rail');
   const h = window.innerHeight;
+  // Hab belum kelihatan (ukuran 0): guna nilai lalai dalam scenes.js
+  if (!title || !title.getBoundingClientRect().height) return null;
   const railWidth = rail && rail.offsetWidth ? window.innerWidth - rail.getBoundingClientRect().left + 16 : 24;
   return {
     top: (title ? title.getBoundingClientRect().bottom : h * 0.25) + 28,
