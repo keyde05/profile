@@ -4844,9 +4844,9 @@ button.tss-sun:focus-visible .tss-sun-label {
 }
 
 #mode-2d.is-portaling main {
-  transform: scale(4);
+  transform: scale(1.6);
   opacity: 0;
-  filter: blur(4px) brightness(1.8);
+  filter: blur(6px) brightness(1.5);
 }
 
 /* Fasa 2–4: babak pelancaran roket (jumlah 2.6s) */
