@@ -926,9 +926,10 @@ async function createUniverse(container, { labels = [], labelRoot = null, onSele
       if (dive) return;
       selected = -1;
       fitViewport();
-      camera.position.copy(hubCamPos).multiplyScalar(0.06);
+      // Mula sedikit lebih dekat daripada pandangan hab (bukan di dalam teras), kemudian berundur
+      camera.position.copy(hubLook).lerp(hubCamPos, 0.55);
       currentLook.copy(hubLook);
-      camera.fov = BASE_FOV + 38;
+      camera.fov = BASE_FOV + 12;
       camera.updateProjectionMatrix();
       setHovered(-1);
       setTouchMode();
