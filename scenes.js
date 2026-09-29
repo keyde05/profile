@@ -619,7 +619,10 @@ async function createUniverse(container, { labels = [], labelRoot = null, onSele
     el.addEventListener('pointerleave', () => setHovered(-1));
   });
 
-  window.addEventListener('resize', () => {
+  // Ukur semula kanvas & bingkai kamera hab. Hanya bila mod 3D kelihatan — semasa tersembunyi
+  // (cth. bar alamat telefon berubah ketika skrol mod 2D) ukuran DOM ialah 0 dan kamera akan tersasar.
+  let needsFit = false;
+  const fitViewport = () => {
     const w = container.clientWidth || window.innerWidth;
     const h = container.clientHeight || window.innerHeight;
     camera.aspect = w / h;
@@ -627,6 +630,11 @@ async function createUniverse(container, { labels = [], labelRoot = null, onSele
     renderer.setSize(w, h);
     if (composer) composer.setSize(w, h);
     updateHubCamera();
+    needsFit = false;
+  };
+  window.addEventListener('resize', () => {
+    if (active && container.offsetParent) fitViewport();
+    else needsFit = true;
   });
 
   // ANIMATION LOOP
@@ -917,6 +925,7 @@ async function createUniverse(container, { labels = [], labelRoot = null, onSele
     emerge() {
       if (dive) return;
       selected = -1;
+      fitViewport();
       camera.position.copy(hubCamPos).multiplyScalar(0.06);
       currentLook.copy(hubLook);
       camera.fov = BASE_FOV + 38;
@@ -941,6 +950,7 @@ async function createUniverse(container, { labels = [], labelRoot = null, onSele
         dive = null;
         done();
       }
+      if (isActive && (needsFit || container.clientWidth !== canvas.clientWidth || container.clientHeight !== canvas.clientHeight)) fitViewport();
       if (isActive && frameId === null) {
         timer.update(); // buang jurang masa semasa dijeda supaya delta tidak melompat
         animate();
