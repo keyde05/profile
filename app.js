@@ -569,6 +569,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForms();
   initTutorial();
   refreshIcons();
+  initI18n();
 
   initLoadingScreen();
 });
