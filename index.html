@@ -73,9 +73,22 @@
             <span class="w-2 h-2 rounded-full bg-[#B7FF3C] animate-pulse"></span>
             <span class="text-[#F4F5F7] tracking-widest font-semibold uppercase">MSD // DIGITAL ARCHITECTURE</span>
           </div>
+          <div class="flex items-center gap-2">
+            <div class="lang-planet" data-lang-switch data-no-i18n>
+                <button type="button" class="lang-planet-core" data-lang-toggle aria-haspopup="listbox" aria-expanded="false" aria-label="Language / Bahasa / 语言">
+                  <span class="lang-planet-ring" aria-hidden="true"></span>
+                  <span data-lang-code>EN</span>
+                </button>
+                <ul class="lang-moons" role="listbox" aria-label="Language" hidden>
+                  <li style="--a:150deg; --n:0; --c:#B7FF3C"><button type="button" role="option" data-lang="ms" lang="ms"><b>BM</b><span>Bahasa Melayu</span></button></li>
+                  <li style="--a:90deg; --n:1; --c:#FF7A59"><button type="button" role="option" data-lang="zh" lang="zh-Hans"><b>中</b><span>中文</span></button></li>
+                  <li style="--a:30deg; --n:2; --c:#36D9FF"><button type="button" role="option" data-lang="en" lang="en"><b>EN</b><span>English</span></button></li>
+                </ul>
+              </div>
           <button data-action="enter" class="px-3 py-1 rounded bg-[#101318] hover:bg-[#1A1F29] border border-white/10 text-[11px] text-[#9299A5] hover:text-[#B7FF3C] transition-colors cursor-pointer">
             SKIP<span class="hidden sm:inline"> [ESC]</span>
           </button>
+          </div>
         </div>
 
         <!-- Center -->
@@ -190,6 +203,17 @@
             </button>
 
             <div class="flex items-center gap-2.5">
+<div class="lang-planet" data-lang-switch data-no-i18n>
+                <button type="button" class="lang-planet-core" data-lang-toggle aria-haspopup="listbox" aria-expanded="false" aria-label="Language / Bahasa / 语言">
+                  <span class="lang-planet-ring" aria-hidden="true"></span>
+                  <span data-lang-code>EN</span>
+                </button>
+                <ul class="lang-moons" role="listbox" aria-label="Language" hidden>
+                  <li style="--a:150deg; --n:0; --c:#B7FF3C"><button type="button" role="option" data-lang="ms" lang="ms"><b>BM</b><span>Bahasa Melayu</span></button></li>
+                  <li style="--a:90deg; --n:1; --c:#FF7A59"><button type="button" role="option" data-lang="zh" lang="zh-Hans"><b>中</b><span>中文</span></button></li>
+                  <li style="--a:30deg; --n:2; --c:#36D9FF"><button type="button" role="option" data-lang="en" lang="en"><b>EN</b><span>English</span></button></li>
+                </ul>
+              </div>
               <button data-action="tutorial" type="button" class="hud-btn w-9 h-9 grid place-items-center rounded-lg border border-white/15 bg-[#101318]/80 hover:bg-[#1A1F29] text-[#9299A5] hover:text-[#36D9FF] backdrop-blur-md transition-colors cursor-pointer" aria-label="Start the tutorial" title="Tutorial">
                 <i data-lucide="circle-help" class="w-4 h-4"></i>
               </button>
@@ -562,6 +586,17 @@
             </nav>
 
             <div class="flex items-center gap-2 shrink-0">
+<div class="lang-planet" data-lang-switch data-no-i18n>
+                <button type="button" class="lang-planet-core" data-lang-toggle aria-haspopup="listbox" aria-expanded="false" aria-label="Language / Bahasa / 语言">
+                  <span class="lang-planet-ring" aria-hidden="true"></span>
+                  <span data-lang-code>EN</span>
+                </button>
+                <ul class="lang-moons" role="listbox" aria-label="Language" hidden>
+                  <li style="--a:150deg; --n:0; --c:#B7FF3C"><button type="button" role="option" data-lang="ms" lang="ms"><b>BM</b><span>Bahasa Melayu</span></button></li>
+                  <li style="--a:90deg; --n:1; --c:#FF7A59"><button type="button" role="option" data-lang="zh" lang="zh-Hans"><b>中</b><span>中文</span></button></li>
+                  <li style="--a:30deg; --n:2; --c:#36D9FF"><button type="button" role="option" data-lang="en" lang="en"><b>EN</b><span>English</span></button></li>
+                </ul>
+              </div>
               <button data-action="contact" class="h2d-pill-solid hidden sm:inline-flex">
                 <span>Let's Talk</span>
                 <i data-lucide="arrow-up-right" class="w-3.5 h-3.5 stroke-[2.5]"></i>
@@ -1122,6 +1157,7 @@
     <script src="trajectory.js"></script>
     <script src="uplink.js"></script>
     <script src="tutorial.js"></script>
+    <script src="i18n.js"></script>
     <script src="scenes.js"></script>
     <script src="app.js"></script>
   </body>
