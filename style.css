@@ -5102,3 +5102,257 @@ button.tss-sun:focus-visible .tss-sun-label {
     font-size: 11px;
   }
 }
+
+/* ============================================================
+   Suis bahasa: planet + bulan-bulan bahasa yang terbang ke orbit
+   ============================================================ */
+.lang-planet {
+  --p: #36D9FF; /* warna planet ikut bahasa aktif */
+  position: relative;
+  flex-shrink: 0;
+  z-index: 60;
+}
+
+.lang-planet[data-active="ms"] { --p: #B7FF3C; }
+.lang-planet[data-active="zh"] { --p: #FF7A59; }
+.lang-planet[data-active="en"] { --p: #36D9FF; }
+
+.lang-planet-core {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  background: radial-gradient(circle at 34% 28%, #ffffff 0%, var(--p) 42%, color-mix(in srgb, var(--p) 45%, #05070a) 100%);
+  box-shadow: 0 0 18px color-mix(in srgb, var(--p) 55%, transparent), inset -5px -6px 10px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: transform 0.35s var(--ease-out-expo), box-shadow 0.3s, background 0.4s;
+}
+
+.lang-planet-core [data-lang-code] {
+  position: relative;
+  z-index: 1;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 800;
+  color: #08090B;
+}
+
+/* Gelang condong yang sentiasa berputar */
+.lang-planet-ring {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 58px;
+  height: 18px;
+  margin: -9px 0 0 -29px;
+  border-radius: 999px;
+  border: 1.5px solid color-mix(in srgb, var(--p) 70%, transparent);
+  border-top-color: transparent;
+  transform: rotate(-18deg);
+  pointer-events: none;
+  animation: lang-planet-ring 5s ease-in-out infinite;
+}
+
+@keyframes lang-planet-ring {
+  0%, 100% { transform: rotate(-18deg); }
+  50% { transform: rotate(14deg); }
+}
+
+.lang-planet-core:hover,
+.lang-planet.is-open .lang-planet-core {
+  transform: scale(1.08);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--p) 75%, transparent), inset -5px -6px 10px rgba(0, 0, 0, 0.35);
+}
+
+.lang-planet-core:focus-visible {
+  outline: 2px solid #F4F5F7;
+  outline-offset: 4px;
+}
+
+/* Denyut bila bahasa baharu "mendarat" */
+.lang-planet.is-landing .lang-planet-core {
+  animation: lang-land 0.7s var(--ease-out-expo);
+}
+
+@keyframes lang-land {
+  0% { transform: scale(0.7); box-shadow: 0 0 0 0 color-mix(in srgb, var(--p) 80%, transparent); }
+  60% { transform: scale(1.18); }
+  100% { transform: scale(1); box-shadow: 0 0 0 18px transparent, 0 0 18px color-mix(in srgb, var(--p) 55%, transparent); }
+}
+
+/* Bulan-bulan: berpusat pada planet, tersusun di lengkung orbit di bawahnya */
+.lang-moons {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Lengkung orbit putus-putus */
+.lang-moons::before {
+  content: '';
+  position: absolute;
+  left: -76px;
+  top: -76px;
+  width: 152px;
+  height: 152px;
+  border-radius: 999px;
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 52%, #000 60%);
+  mask-image: linear-gradient(to bottom, transparent 52%, #000 60%);
+  animation: fade-in 0.4s ease both;
+  pointer-events: none;
+}
+
+.lang-moons li {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: rotate(var(--a)) translateX(76px) rotate(calc(var(--a) * -1));
+  animation: lang-moon-out 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: calc(var(--n) * 0.06s);
+}
+
+@keyframes lang-moon-out {
+  from { transform: rotate(calc(var(--a) - 90deg)) translateX(0) rotate(calc((var(--a) - 90deg) * -1)) scale(0.2); opacity: 0; }
+  to { transform: rotate(var(--a)) translateX(76px) rotate(calc(var(--a) * -1)) scale(1); opacity: 1; }
+}
+
+.lang-moons button {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  transform: translate(-50%, -50%);
+  border-radius: 999px;
+  background: radial-gradient(circle at 34% 28%, #ffffff 0%, var(--c) 45%, color-mix(in srgb, var(--c) 40%, #05070a) 100%);
+  box-shadow: 0 0 14px color-mix(in srgb, var(--c) 45%, transparent), inset -4px -5px 9px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s;
+}
+
+.lang-moons button b {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 800;
+  color: #08090B;
+}
+
+.lang-moons button[lang="zh-Hans"] b {
+  font-family: system-ui, 'Microsoft YaHei', 'PingFang SC', sans-serif;
+  font-size: 14px;
+}
+
+/* Nama penuh: muncul di bawah bulan bila hover / fokus / aktif */
+.lang-moons button span {
+  position: absolute;
+  top: calc(100% + 7px);
+  left: 50%;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(10, 12, 16, 0.92);
+  border: 1px solid color-mix(in srgb, var(--c) 45%, transparent);
+  font-size: 11px;
+  font-weight: 600;
+  color: #F4F5F7;
+  white-space: nowrap;
+  transform: translateX(-50%) translateY(-4px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s, transform 0.25s var(--ease-out-expo);
+}
+
+.lang-moons button:hover,
+.lang-moons button:focus-visible {
+  transform: translate(-50%, -50%) scale(1.18);
+  box-shadow: 0 0 26px color-mix(in srgb, var(--c) 75%, transparent), inset -4px -5px 9px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.lang-moons button:hover span,
+.lang-moons button:focus-visible span {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* Bulan aktif: gelang putih menandakan pilihan semasa */
+.lang-moons button[aria-selected="true"]::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 999px;
+  border: 1.5px solid #F4F5F7;
+  opacity: 0.8;
+}
+
+@media (max-width: 639px) {
+  .lang-planet-core { width: 40px; height: 40px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lang-planet-ring,
+  .lang-planet.is-landing .lang-planet-core,
+  .lang-moons li,
+  .lang-moons::before { animation: none; }
+}
+
+/* Gelombang orbit semasa bertukar bahasa */
+.lang-wave {
+  position: fixed;
+  left: var(--x);
+  top: var(--y);
+  z-index: 120;
+  width: 20px;
+  height: 20px;
+  margin: -10px 0 0 -10px;
+  border-radius: 999px;
+  border: 2px solid rgba(183, 255, 60, 0.8);
+  box-shadow: 0 0 30px rgba(183, 255, 60, 0.5), inset 0 0 30px rgba(54, 217, 255, 0.3);
+  pointer-events: none;
+  animation: lang-wave 0.9s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+}
+
+@keyframes lang-wave {
+  from { transform: scale(1); opacity: 1; }
+  to { transform: scale(160); opacity: 0; }
+}
+
+/* Teks "berkelip" sekejap ketika ditukar */
+html.lang-switching body {
+  --lang-blur: 1;
+}
+
+html.lang-switching main,
+html.lang-switching .world,
+html.lang-switching #orbit-hub,
+html.lang-switching #loading-screen > .relative {
+  animation: lang-flicker 0.6s ease both;
+}
+
+@keyframes lang-flicker {
+  0% { filter: none; opacity: 1; }
+  35% { filter: blur(4px); opacity: 0.35; }
+  100% { filter: none; opacity: 1; }
+}
+
+/* Bahasa Cina: jarak huruf biasa (tracking lebar tidak sesuai untuk aksara Cina) */
+html[lang="zh-Hans"] body * {
+  letter-spacing: 0.02em !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lang-wave,
+  html.lang-switching main,
+  html.lang-switching .world,
+  html.lang-switching #orbit-hub,
+  html.lang-switching #loading-screen > .relative { animation: none; }
+}
